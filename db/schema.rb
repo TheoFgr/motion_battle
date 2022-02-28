@@ -10,14 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_28_150614) do
+ActiveRecord::Schema.define(version: 2022_02_28_170602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "games", force: :cascade do |t|
+    t.string "status"
+    t.datetime "started_at"
+    t.datetime "ended_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "participations", force: :cascade do |t|
+    t.integer "score"
+    t.string "status"
+    t.integer "kill_count"
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_participations_on_game_id"
+    t.index ["user_id"], name: "index_participations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -29,21 +44,10 @@ ActiveRecord::Schema.define(version: 2022_02_28_150614) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "pseudo"
-    t.integer "score"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "waiting_rooms", force: :cascade do |t|
-    t.integer "score"
-    t.bigint "user_id", null: false
-    t.bigint "game_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_id"], name: "index_waiting_rooms_on_game_id"
-    t.index ["user_id"], name: "index_waiting_rooms_on_user_id"
-  end
-
-  add_foreign_key "waiting_rooms", "games"
-  add_foreign_key "waiting_rooms", "users"
+  add_foreign_key "participations", "games"
+  add_foreign_key "participations", "users"
 end
