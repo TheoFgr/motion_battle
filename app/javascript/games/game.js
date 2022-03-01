@@ -1,4 +1,4 @@
-const movingCharacter = () => {
+const movingCaracter = () => {
   var character = document.querySelector(".character");
   var map = document.querySelector(".map");
 
@@ -130,4 +130,4 @@ const movingCharacter = () => {
 
 }
 
-export default movingCharacter()
+export default movingCaracter()
