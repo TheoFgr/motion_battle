@@ -8,7 +8,7 @@ game1 = Game.create()
 
 puts 'Games created'
 
-waiting_room1 = WaitingRoom.create(user_id: user1, game_id: game1)
+participation1 = Participation.create(user_id: user1, game_id: game1)
 
 puts 'WaitingRomm created'
 
