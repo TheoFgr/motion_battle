@@ -8,8 +8,14 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new
+    @game = Game.new(params_game)
     @game.save
     redirect_to user_game_path(@game)
+  end
+
+  private
+
+  def params_game
+    params.require(:game).permit(:status, :started_at, :ended_at)
   end
 end

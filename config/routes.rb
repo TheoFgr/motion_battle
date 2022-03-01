@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   resources :games, except: [:destroy, :edit, :update, :index] do
-      resources :waiting_rooms, only: [:index]
+      resources :participations, only: [:index]
     end
 end
