@@ -1,3 +1,19 @@
+<h1>Show Games</h1>
+
+<%= @game.id %>
+
+<%= button_to 'Participe', participations_path, methode: :post, remote: true  %>
+
+
+
+<div class= "controller" data-controller='game-subscriptions'  data-game-subscriptions-game-id-value="<%= @game.id %>">
+  <div class="participations" data-game-subscriptions-target="participations">
+    <% @game.participations.each do |participation| %>
+      <%= render "participations/participation", participation: participation %>
+    <% end %>
+  </div>
+  <div class= "canvas"  data-game-subscriptions-target="canvas">
+
 <div class="frame">
   <div class="corner_topleft"></div>
   <div class="corner_topright"></div>
