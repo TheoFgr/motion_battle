@@ -6,7 +6,7 @@ class ParticipationsController < ApplicationController
   def create
     @participation = Participation.new
     @participation.user = current_user
-    @game = Game.find_or_create_by(status: :waiting)
+    @game = Game.last
     @participation.game = @game
     if @participation.save
       GameChannel.broadcast_to(
@@ -15,7 +15,6 @@ class ParticipationsController < ApplicationController
           content: render_to_string(partial: "participation", locals: { participation: @participation })
         }
         )
-        redirect_to game_path(@participation.game)
     else
       redirect_to root_path
     end
