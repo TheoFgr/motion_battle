@@ -1,1 +1,47 @@
-// Specific CSS for your home-page
+body{
+  background-image: url("sombre.jpg");
+  background-size: cover;
+  }
+
+
+
+
+  .container {
+    height: 100vh;
+  text-align: center;
+  align-items: center;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+
+.title h1 {
+  font-size: 3.5rem;
+}
+
+.section {
+  font-size: 2.5rem;
+}
+
+.content {
+  margin-top: -200px;
+}
+
+.section-ecarter {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2.5rem;
+}
+
+.cursive h1{
+  font-family: cursive;
+}
+
+.comic h1 {
+  font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.apple h1 {
+  font-family: Apple Chancery, cursive;
+}
