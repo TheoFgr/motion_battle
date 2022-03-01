@@ -1,5 +1,5 @@
-class WaitingRoomsController < ApplicationController
+class ParticipationsController < ApplicationController
   def index
-    @waiting_rooms = WaitingRoom.all
+    @participations = Participation.all
   end
 end
