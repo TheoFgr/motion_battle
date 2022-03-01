@@ -14,3 +14,8 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+import {movingCharacter} from "../games/game"
+
+document.addEventListener("turbolinks:load", () => {
+  movingCharacter();
+})
