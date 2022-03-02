@@ -16,6 +16,10 @@ import "controllers"
 import "bootstrap"
 import {movingCharacter} from "../games/game"
 
-document.addEventListener("turbolinks:load", () => {
-  movingCharacter();
+document.addEventListener("click", () => {
+  const game = document.getElementById('test')
+  if (game) {
+
+    movingCharacter();
+  }
 })
