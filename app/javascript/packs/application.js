@@ -22,3 +22,4 @@ document.addEventListener("click", () => {
     movingCharacter();
   }
 })
+
