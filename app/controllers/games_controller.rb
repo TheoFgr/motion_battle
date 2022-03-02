@@ -3,19 +3,8 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
   end
 
-  def new
-    @game = Game.new
-  end
-
   def create
-    @game = Game.new(params_game)
-    @game.save
-    redirect_to user_game_path(@game)
-  end
-
-  private
-
-  def params_game
-    params.require(:game).permit(:status, :started_at, :ended_at)
+    @game = Game.find_or_create_by(status: :waiting)
+    redirect_to game_path(@game)
   end
 end
