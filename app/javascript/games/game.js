@@ -1,4 +1,4 @@
-const movingCharacter = () => {
+
   var character = document.querySelector(".character");
   var map = document.querySelector(".map");
 
@@ -128,6 +128,5 @@ const movingCharacter = () => {
   document.querySelector(".dpad-right").addEventListener("mouseover", (e) => handleDpadPress(directions.right));
   document.querySelector(".dpad-down").addEventListener("mouseover", (e) => handleDpadPress(directions.down));
 
-}
 
-export default movingCharacter()
+export { placeCharacter }
