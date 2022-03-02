@@ -131,6 +131,7 @@ const movingCharacter = () => {
       document.querySelector(".dpad-down").addEventListener("mouseover", (e) => handleDpadPress(directions.down));
 
   }
+
 }
 
 export { movingCharacter }

@@ -14,7 +14,7 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
-import {movingCharacter} from "../games/game"
+import { placeCharacter } from "../games/game.js"
 
 document.addEventListener("click", () => {
   const game = document.getElementById('test')
@@ -22,4 +22,3 @@ document.addEventListener("click", () => {
 
     movingCharacter();
   }
-})
