@@ -1,8 +1,20 @@
-<h1>Show Games</h1>
+<div class="container-game">
+  <div class = "botton">
+    <%= button_to 'Participe', participations_path, methode: :post, remote: true, class:"bouton-participe" %>
+  </div>
+  <div class = "game">
+    <h1>Game 1</h1>
+  </div>
+  <div class = "pseudo">
+    <ul>
+      <li>the motherfucker
+      </li>
+    </ul>
+  </div>
+</div>
+
 
 <%= @game.id %>
-
-<%= button_to 'Participe', participations_path, methode: :post, remote: true  %>
 
 
 

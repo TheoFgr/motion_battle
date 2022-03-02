@@ -1,18 +1,19 @@
-
-<div class= "container">
-  <div class ="title">
-    <h1>Motion Battle </h1>
-  </div>
-  <div class ="content">
-    <div class = "section-play">
-      <%= link_to "Play", games_path, class:"bouton-home-page"%>
+<div class= "big-container">
+  <div class= "container">
+    <div class ="title">
+      <h1>Motion Battle </h1>
     </div>
-    <div class = "section-ecarter">
-      <%= link_to "Rules", root_path, class:"bouton-home-page"%>
-      <%= link_to "Option", root_path, class:"bouton-home-page"%>
-    </div>
-    <div class = "section-quit">
-      <%= link_to "Quit", root_path, class:"bouton-home-page"%>
+    <div class ="content">
+      <div class = "section-play">
+        <%= button_to 'New Game', games_path, methode: :post %>
+      </div>
+      <div class = "section-ecarter">
+        <%= link_to "Rules", root_path, class:"bouton-home-page"%>
+        <%= link_to "Option", root_path, class:"bouton-home-page"%>
+      </div>
+      <div class = "section-quit">
+        <%= link_to "Quit", root_path, class:"bouton-home-page"%>
+      </div>
     </div>
   </div>
 </div>

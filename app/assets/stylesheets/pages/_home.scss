@@ -1,7 +1,9 @@
-body{
-  background-image: url("appart.jpg");
+.big-container{
+  background-image: url("appart.jpg") !important;
   background-size: cover;
-  }
+  width: 100%;
+  height: 100%;
+}
 
   .container {
   height: 100vh;

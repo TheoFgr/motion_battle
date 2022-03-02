@@ -1,4 +1,44 @@
-  :root {
+.container-game{
+  background-image: url("bois.jpg");
+  margin: auto;
+  width: 50%;
+  height: 101%;
+  background-size: cover;
+  text-align: center;
+}
+
+.botton {
+  text-align: center;
+  margin: auto;
+  width: 20%;
+  margin-top: 100px;
+}
+
+.bouton-participe {
+  font-size: 3.0rem;
+  margin-left: -37px;
+}
+
+.game h1{
+  border: solid;
+  font-family: "UnifrakturCook";
+  width: 150px;
+  text-align: center;
+  margin: auto;
+  margin-top: 45px;
+  font-size: 3.0rem;
+}
+
+.pseudo{
+  font-family: "UnifrakturCook";
+  font-size: 2.0rem;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 70px;
+}
+
+
+:root {
     --pixel-size: 2px;
     --grid-cell: calc( var(--pixel-size) * 16);
     --bg: white;
