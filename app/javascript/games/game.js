@@ -16,7 +16,7 @@ const game = () => {
     function gameLoop() {
       tileMap.draw(ctx);
     }
-    setInterval(gameLoop, 1000 / 0.1);
+    setInterval(gameLoop, 1000 / 90);
     // Player.draw(ctx);
   };
 }
