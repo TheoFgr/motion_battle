@@ -1,5 +1,5 @@
 import poutine from "../images/poutine2.jpg";
-import poupou from "../images/poutine1.jpeg";
+import poupou from "../images/poutine1.jpg";
 
 export default class Enemy {
   constructor(x, y, tileSize, velocity, tileMap){

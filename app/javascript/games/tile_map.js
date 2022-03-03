@@ -1,6 +1,6 @@
-import grassimage from "../images/greengrass.jpeg"
+import grassimage from "../images/greengrass.jpg"
 import wall from "../images/fire.gif"
-import rock from "../images/caillou.jpeg"
+import rock from "../images/caillou.jpg"
 import Player from './player.js'
 import { MovingDirection } from "./moving_direction"
 import Enemy from "./enemy.js"
