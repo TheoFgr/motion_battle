@@ -4,7 +4,7 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.find_or_create_by(status: :waiting)
+    @game = Game.create(status: :waiting)
     redirect_to game_path(@game)
   end
 end
