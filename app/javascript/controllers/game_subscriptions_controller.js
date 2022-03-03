@@ -19,6 +19,7 @@ export default class extends Controller {
         break;
       case "game_starting":
         this.gameTarget.innerHTML = data.content
+        break;
     }
   }
 }

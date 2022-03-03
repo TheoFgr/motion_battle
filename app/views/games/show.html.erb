@@ -1,26 +1,19 @@
 <div class="container-game">
   <div class = "button-participe">
-    <%= link_to "Participe", root_path, class:"bouton-show"%>
+    <%= button_to "Participe", participations_path, methode: :post, remote: true, class:"bouton-show"%>
   </div>
   <div class = "game">
-    <h1>Game 1</h1>
+    <h1>Game <%= @game.id %></h1>
   </div>
   <div class = "pseudo">
-    <ul>
-      <li>the motherfucker
-      </li>
-    </ul>
-  </div>
-</div>
-  <%= @game.id %>
-
-
-<div class= "controller" data-controller='game-subscriptions'  data-game-subscriptions-game-id-value="<%= @game.id %>">
-  <div class="participations" data-game-subscriptions-target="participations">
-    <% @game.participations.each do |participation| %>
-      <%= render "participations/participation", participation: participation %>
-    <% end %>
-  </div>
-  <div class= "game"  data-game-subscriptions-target="game">
+      <div class= "controller" data-controller='game-subscriptions'  data-game-subscriptions-game-id-value="<%= @game.id %>">
+        <div class="participations" data-game-subscriptions-target="participations">
+          <% @game.participations.each do |participation| %>
+            <%= render "participations/participation", participation: participation %>
+          <% end %>
+        </div>
+        <div class= "game"  data-game-subscriptions-target="game">
+        </div>
+      </div>
   </div>
 </div>
