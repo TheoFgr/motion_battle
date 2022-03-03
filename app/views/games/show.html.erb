@@ -12,8 +12,7 @@
     </ul>
   </div>
 </div>
-<%= @game.id %>
-
+  <%= @game.id %>
 
 
 <div class= "controller" data-controller='game-subscriptions'  data-game-subscriptions-game-id-value="<%= @game.id %>">
@@ -22,6 +21,6 @@
       <%= render "participations/participation", participation: participation %>
     <% end %>
   </div>
-  <div class= "canvas"  data-game-subscriptions-target="canvas">
+  <div class= "game"  data-game-subscriptions-target="game">
   </div>
 </div>

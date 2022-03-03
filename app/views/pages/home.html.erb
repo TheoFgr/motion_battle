@@ -1,20 +1,19 @@
 <div class= "big-container">
-    <div class ="title">
-      <h1>Motion Battle </h1>
-    </div>
-    <div class="chateau">
-    </div>
+  <div class ="title">
+    <h1>Motion Battle </h1>
+  </div>
+    <div class="chateau"></div>
     <div class= "panneau-fleche-droite">
       <%= image_tag("panneau-fleche-droite.png", :alt => "pancarte") %>
     </div>
-      <div class = "new-game">
-        <%= link_to "New Game",  games_path, method: :post, class: "new-game"%>
-      </div>
-      <div class = "rules-option">
-        <%= link_to "Rules", root_path, class:"bouton-home-page"%>
-        <%= link_to "Option", root_path, class:"bouton-home-page"%>
-      </div>
-      <div class = "quit">
-        <%= link_to "Quit", root_path, class:"bouton-home-page"%>
-      </div>
+    <div class = "new-game">
+      <%= link_to "New Game",  games_path, method: :post, class: "new-game"%>
+    </div>
+    <div class = "rules-option">
+      <%= link_to "Rules", root_path, class:"bouton-home-page"%>
+      <%= link_to "Option", root_path, class:"bouton-home-page"%>
+    </div>
+    <div class = "quit">
+      <%= link_to "Quit", root_path, class:"bouton-home-page"%>
+    </div>
 </div>

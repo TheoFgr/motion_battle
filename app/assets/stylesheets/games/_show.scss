@@ -98,7 +98,7 @@
 
   .map {
     // image-rendering: pixelated;
-    background-image: url("https://images.unsplash.com/photo-1548445929-4f60a497f851?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80");
+    background-image: url("map.png");
     background-size: 100%;
     width: calc(13 * var(--grid-cell));
     height: calc(10 * var(--grid-cell));
@@ -124,10 +124,16 @@
 
   .character_spritesheet {
     position: absolute;
-    background: url("https://assets.codepen.io/21542/DemoRpgCharacter.png") no-repeat no-repeat;
+    background: url("medieval.jpg") no-repeat no-repeat;
     background-size: 100%;
     width: calc( var(--grid-cell)* 8 );
     height: calc( var(--grid-cell)* 8 );
+  }
+
+  .arbre {
+    background: asset-url("arbre.png");
+    width: 50px;
+    height: 50px;
   }
 
   .character[facing="right"] .character_spritesheet {
