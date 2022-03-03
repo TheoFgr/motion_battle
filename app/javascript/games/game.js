@@ -30,7 +30,7 @@ const movingCharacter = () => {
         var leftLimit = -8;
         var rightLimit = (16 * 11) + 8;
         var topLimit = -8 + 32;
-        var bottomLimit = (16 * 7);
+        var bottomLimit = (16 * 10);
         if (x < leftLimit) { x = leftLimit; }
         if (x > rightLimit) { x = rightLimit; }
         if (y < topLimit) { y = topLimit; }
