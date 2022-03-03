@@ -1,5 +1,5 @@
 import grassimage from "../images/greengrass.jpg"
-import wall from "../images/fire.gif"
+import wall from "../images/buisson.jpg"
 import rock from "../images/caillou.jpg"
 import Player from './player.js'
 import { MovingDirection } from "./moving_direction"
