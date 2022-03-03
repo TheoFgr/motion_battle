@@ -98,16 +98,16 @@
 
   .map {
     // image-rendering: pixelated;
-    background-image: url("map.png");
+    background-image: url("background-01.png");
     background-size: 100%;
-    width: calc(13 * var(--grid-cell));
-    height: calc(10 * var(--grid-cell));
+    width: calc(15 * var(--grid-cell));
+    height: calc(15 * var(--grid-cell));
     position: relative;
   }
 
   .character {
-    width: calc( var(--grid-cell)* 2 );
-    height: calc( var(--grid-cell)* 2 );
+    width: calc( var(--grid-cell)* 0.80 );
+    height: calc( var(--grid-cell)* 8 );
     position: absolute;
     overflow:hidden;
   }
@@ -124,7 +124,7 @@
 
   .character_spritesheet {
     position: absolute;
-    background: url("medieval.jpg") no-repeat no-repeat;
+    background: url("crusader_full.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc( var(--grid-cell)* 8 );
     height: calc( var(--grid-cell)* 8 );
