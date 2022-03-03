@@ -1,6 +1,6 @@
 <div class="container-game">
-  <div class = "botton">
-    <%= button_to 'Participe', participations_path, methode: :post, remote: true, class:"bouton-participe" %>
+  <div class = "button-participe">
+    <%= link_to "Participe", root_path, class:"bouton-show"%>
   </div>
   <div class = "game">
     <h1>Game 1</h1>
@@ -12,8 +12,6 @@
     </ul>
   </div>
 </div>
-
-
 <%= @game.id %>
 
 

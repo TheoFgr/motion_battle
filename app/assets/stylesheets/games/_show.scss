@@ -1,26 +1,30 @@
 .container-game{
-  background-image: url("bois.jpg");
+  background-image: url("paysagecartoon.jpg");
+  background-size: cover;
   margin: auto;
-  width: 50%;
-  height: 101%;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   text-align: center;
 }
 
-.botton {
+.bouton-show {
   text-align: center;
   margin: auto;
   width: 20%;
   margin-top: 100px;
+  text-decoration:none;
+  color: #0E0101;
+  text-decoration:none;
+  font-family: "UnifrakturCook";
+  font-size: 2.5rem;
+  &:hover {
+    color:#0E0101 !important;
+  }
 }
 
-.bouton-participe {
-  font-size: 3.0rem;
-  margin-left: -37px;
-}
 
 .game h1{
-  border: solid;
   font-family: "UnifrakturCook";
   width: 150px;
   text-align: center;
@@ -36,6 +40,7 @@
   justify-content: flex-start;
   margin-left: 70px;
 }
+
 
 
 :root {

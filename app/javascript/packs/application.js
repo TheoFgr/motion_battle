@@ -19,6 +19,6 @@ import { placeCharacter } from "../games/game.js"
 document.addEventListener("click", () => {
   const game = document.getElementById('test')
   if (game) {
-
     movingCharacter();
   }
+});
