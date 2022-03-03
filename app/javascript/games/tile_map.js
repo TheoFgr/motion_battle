@@ -51,8 +51,10 @@ export default class TileMap {
 
 
   setCanvasSize(canvas){
-    canvas.width = this.map[0].length * this.tileSize;
-    canvas.height = this.map.length * this.tileSize;
+    // canvas.width = this.map[0].length * this.tileSize;
+    // canvas.height = this.map.length * this.tileSize;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
   }
 
   getPlayer(velocity) {

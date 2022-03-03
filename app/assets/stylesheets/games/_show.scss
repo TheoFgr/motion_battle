@@ -241,3 +241,9 @@
     right:calc(var(--pixel-size) * 2);
     width: calc(var(--pixel-size) * 75)
   }
+
+  #canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
