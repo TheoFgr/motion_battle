@@ -1,41 +1,92 @@
-body{
-  background-image: url("appart.jpg");
+.big-container{
+  background-image: url("font-chateau.png") !important;
   background-size: cover;
-  }
-
-  .container {
-  height: 100vh;
-  text-align: center;
   width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.panneau-fleche-droite {
+  position:absolute;
+  top: -60px;
+  left: 105px;
 }
 
 .title h1 {
   font-family: "UnifrakturCook";
   font-size: 5.5rem;
-  margin-bottom: 54px;
-  margin-top: 85px;
-  color: #1C0A00;
+  margin-bottom: 85px;
+  text-align:center;
+  text-shadow:   -1px -1px 0 black,
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black;
+  color: darkred;
+
 }
 
-.section-play {
+.new-game {
   font-size: 3.5rem;
-}
-
-.section-quit {
-  font-size: 3.5rem;
-}
-
-.content {
-  margin-top: 50px;
+  text-decoration: none !important;
+  text-shadow:   -1px -1px 0 white,
+  1px -1px 0 white,
+  -1px 1px 0 white,
+  1px 1px 0 white;
+  color: black;
   font-family: "UnifrakturCook";
+  position:relative;
+  text-align: center;
+  &:hover {
+    color:#0E0101 !important;
+  }
+
 }
 
-.section-ecarter {
+.rules-option{
   display: flex;
   justify-content: space-evenly;
   font-size: 3.5rem;
+  font-family: "UnifrakturCook";
+  margin-top: 62px;
+  position: relative;
+  text-shadow:   -1px -1px 0 white,
+  1px -1px 0 white,
+  -1px 1px 0 white,
+  1px 1px 0 white;
+  color: black;
 }
 
+.option {
+  font-size: 3.5rem;
+  font-family: "UnifrakturCook";
+  position: relative;
+  text-align: center;
+  text-shadow:   -1px -1px 0 white,
+  1px -1px 0 white,
+  -1px 1px 0 white,
+  1px 1px 0 white;
+  color: black;
+}
+
+.quit {
+  font-size: 3.5rem;
+  font-family: "UnifrakturCook";
+  position: relative;
+  text-align: center;
+  margin-top: 6px;
+  text-shadow:   -1px -1px 0 white,
+  1px -1px 0 white,
+  -1px 1px 0 white,
+  1px 1px 0 white;
+  color: black;
+}
+
+
+
 .bouton-home-page {
-  color: #361500;
+  color: #0E0101;
+  text-decoration: none;
+  &:hover {
+    color:#0E0101 !important;
+  }
 }
