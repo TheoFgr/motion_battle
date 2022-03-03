@@ -16,6 +16,6 @@ import "controllers"
 import "bootstrap"
 import { game } from "../games/game.js"
 
-document.addEventListener("click", () => {
+document.querySelector(".game").addEventListener("click", () => {
   game()
-})
+},{once: true})

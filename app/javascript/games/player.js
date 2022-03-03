@@ -1,4 +1,4 @@
-import player1 from "../images/player_1.png"
+import player1 from "../images/player_1.png";
 import { MovingDirection } from "./moving_direction";
 
 export default class Player {
