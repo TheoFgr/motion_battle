@@ -2,6 +2,7 @@ import grassimage from "../images/greengrass.jpeg"
 import wall from "../images/fire.gif"
 import rock from "../images/caillou.jpeg"
 import Player from './player.js'
+import { MovingDirection } from "./moving_direction"
 
 
 export default class TileMap {
@@ -25,7 +26,7 @@ export default class TileMap {
     [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1],
     [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1],
     [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1],
-    [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1],
+    [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1],
     [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1],
     [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1],
     [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1],
@@ -79,6 +80,54 @@ export default class TileMap {
   };
 
 
+  didCollideWithEnvironment(x, y, direction) {
+    if (direction == null){
+      return;
+    }
+    if (
+      Number.isInteger(x / this.tileSize) &&
+      Number.isInteger(y / this.tileSize)
+    ) {
+      let column = 0;
+      let row = 0;
+      let nextColumn = 0;
+      let nextRow = 0;
+
+      switch (direction) {
+        case MovingDirection.right:
+          nextColumn = x + this.tileSize
+          column = nextColumn / this.tileSize
+          row = y / this.tileSize
+          break;
+
+        case MovingDirection.left:
+          nextColumn = x - this.tileSize
+          column = nextColumn / this.tileSize
+          row = y / this.tileSize
+          break;
+
+        case MovingDirection.up:
+          nextRow = y - this.tileSize
+          row = nextRow / this.tileSize
+          column = x / this.tileSize
+          break;
+
+        case MovingDirection.down:
+          nextRow = y + this.tileSize
+          row = nextRow / this.tileSize
+          column = x / this.tileSize
+          break;
+      }
+      const tile = this.map[row][column];
+      if (tile === 2 || tile === 3){
+        return true;
+      }
+
+    }
+    return false;
+  }
+
+
   #drawWall(ctx, column, row, size) {
     ctx.drawImage(this.wall, column * size, row * size);
   }
@@ -90,4 +139,6 @@ export default class TileMap {
   #drawRock(ctx, column, row, size) {
     ctx.drawImage(this.rock, column * size, row * size);
   }
+
+
 }

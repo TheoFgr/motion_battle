@@ -71,9 +71,27 @@ export default class Player {
       Number.isInteger(this.x / this.tileSize) &&
       Number.isInteger(this.y / this.tileSize)
     ){
+      if (
+        !this.tileMap.didCollideWithEnvironment(
+          this.x,
+          this.y,
+          this.requestedMovingDirection,
+          )
+        )
+
       this.currentMovingDirection = this.requestedMovingDirection;
     }
+
   }
+  if (
+    this.tileMap.didCollideWithEnvironment(
+      this.x,
+      this.y,
+      this.currentMovingDirection,
+      )
+    ) {
+      return
+    }
   switch (this.currentMovingDirection) {
     case MovingDirection.up:
       this.y -= this.velocity
