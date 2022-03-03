@@ -13,6 +13,7 @@ export default class extends Controller {
     }
 
   routeAction(data){
+    console.log(data)
     switch(data.action){
       case "new_participation":
         this.participationsTarget.insertAdjacentHTML("beforeend", data.content)
