@@ -1,6 +1,8 @@
 import grassimage from "../images/greengrass.jpeg"
 import wall from "../images/fire.gif"
 import rock from "../images/caillou.jpeg"
+import Player from './player.js'
+
 
 export default class TileMap {
   constructor(tileSize) {
@@ -39,9 +41,24 @@ export default class TileMap {
     [1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1],
     [1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1],
   ]
+
+
+
   setCanvasSize(canvas){
     canvas.width = this.map[0].length * this.tileSize;
     canvas.height = this.map.length * this.tileSize;
+  }
+
+  getPlayer(velocity) {
+    for (let row = 0; row < this.map.length; row++) {
+      for (let column = 0; column < this.map[row].length; column++){
+        let tile = this.map[row][column];
+        if (tile === 9) {
+          this.map[row][column] = 0;
+          return new Player(column * this.tileSize, row * this.tileSize, this.tileSize, velocity, this);
+        }
+      }
+    }
   }
 
   draw(ctx) {
@@ -60,6 +77,7 @@ export default class TileMap {
       }
     }
   };
+
 
   #drawWall(ctx, column, row, size) {
     ctx.drawImage(this.wall, column * size, row * size);
