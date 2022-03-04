@@ -47,7 +47,6 @@ export default class TileMap {
     [1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1],
     [1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-
   ]
 
 
@@ -71,16 +70,18 @@ export default class TileMap {
     }
   }
 
-  getEnemy(velocity) {
+  getEnemies(velocity) {
+    const enemies = [];
     for (let row = 0; row < this.map.length; row++) {
       for (let column = 0; column < this.map[row].length; column++){
-        let tile = this.map[row][column];
+        const tile = this.map[row][column];
         if (tile === 8) {
           this.map[row][column] = 0;
-          return new Enemy(column * this.tileSize, row * this.tileSize, this.tileSize, velocity, this);
+          enemies.push(new Enemy(column * this.tileSize, row * this.tileSize, this.tileSize, velocity, this));
         }
       }
     }
+    return enemies
   }
 
   draw(ctx) {
@@ -143,7 +144,7 @@ export default class TileMap {
           break;
       }
       const tile = this.map[row][column];
-      if (tile != 1){
+      if (tile == 4){
         return true;
       }
 

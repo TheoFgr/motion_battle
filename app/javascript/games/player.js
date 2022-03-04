@@ -18,9 +18,17 @@ export default class Player {
   }
 
 
-  draw(ctx) {
+  draw(ctx, enemies) {
     this.#move();
     ctx.drawImage(this.playerImages[this.playerImageIndex], this.x, this.y, this.tileSize, this.tileSize)
+    this.#eatEnemy(enemies);
+  }
+
+  #eatEnemy(enemies){
+    const collideEnemies = enemies.filter((enemy)=>enemy.collideWith(this));
+    collideEnemies.forEach((enemy) =>{
+      enemies.splice(enemies.indexOf(enemy),1);
+    });
   }
 
   #loadPlayerImages() {
@@ -110,7 +118,6 @@ export default class Player {
       break;
   }
 }
-
 
 
 
