@@ -11,13 +11,13 @@ const game = () => {
     const ctx = canvas.getContext('2d');
     const tileMap = new TileMap(tileSize);
     const Player = tileMap.getPlayer(velocity);
-    const Enemy = tileMap.getEnemy(velocity);
+    const enemies = tileMap.getEnemies(velocity);
 
     tileMap.setCanvasSize(canvas);
     function gameLoop() {
       tileMap.draw(ctx);
-      Player.draw(ctx);
-      Enemy.draw(ctx);
+      Player.draw(ctx, enemies);
+      enemies.forEach(enemy => enemy.draw(ctx));
     }
 
     setInterval(gameLoop, 1000 / 150);
