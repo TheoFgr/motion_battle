@@ -12,10 +12,21 @@
 @import "components/index";
 @import "pages/index";
 @import "games/index";
+@import "participations/index";
 
 //div{
 //  border: 1px solid black;
 //}
 body, html {
   overflow: hidden;
+}
+
+a {
+  color: purple;
+  text-decoration: none;
+
+  &:hover {
+    color: unset;
+    text-decoration: none;
+  }
 }
