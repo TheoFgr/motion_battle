@@ -18,6 +18,8 @@ const game = () => {
       tileMap.draw(ctx);
       Player.draw(ctx, enemies);
       enemies.forEach(enemy => enemy.draw(ctx));
+      ctx.font = "50px UnifrakturCook";
+      ctx.fillText('score: ' + Player.score, 20, 40);
     }
 
     setInterval(gameLoop, 1000 / 150);

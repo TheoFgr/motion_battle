@@ -1,5 +1,5 @@
 import { MovingDirection } from "./moving_direction";
-import poutine from "../images/poutine2.png";
+import poutine from "../images/dragonfly.png";
 import poupou from "../images/poutine1.jpg";
 
 export default class Enemy {
