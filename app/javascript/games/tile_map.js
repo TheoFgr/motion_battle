@@ -1,4 +1,4 @@
-import grassimage from "../images/green-emeraude.jpeg"
+import grassimage from "../images/green-emeraude.jpg"
 import newgrass from "../images/rsz_wall.jpg"
 import wall from "../images/wall.jpg"
 import rock from "../images/rsz_caillou.jpg"
