@@ -1,7 +1,30 @@
-<h1 class="title-congrats">Congratulation, you Win</h1>
- <div class="container-summary">
- <p>Rank</p>
- <p>Name</p>
- <p>Survival Time</p>
- <p>Kill(s)</p>
- </div>
+<h1 class="title-congrats">VICTORY / DEFEAT</h1>
+<% n = 0 %>
+<div class="all-data">
+  <div class="container-data">
+    <p class="stats">Rank</p>
+    <p class="stats">Name</p>
+    <p class="stats">Survival Time</p>
+    <p class="stats">Kill(s)</p>
+  </div>
+  <div class="container-data">
+    <p class="stats">1</p>
+    <p class="stats">wqkerino</p>
+    <p class="stats">1,12sec</p>
+    <p class="stats">2</p>
+  </div>
+
+  <div class="container-data">
+    <% @participations.each do |participation| %>
+      <p class="stats"><%= n += 1 %></p>
+      <p class="stats"><%= participation.user.pseudo %></p>
+      <p class="stats"></p>
+      <%# <%= participation.game.ended_at - participation.game.started_at %>
+      <p class="stats"><%= participation.kill_count %></p>
+    <% end %>
+  </div>
+</div>
+<div class="btn-display">
+  <%= link_to "New Game",  games_path, method: :post, class: "btn-newgame"%>
+  <%= link_to "Quit", root_path, class:"btn-quit"%>
+</div>

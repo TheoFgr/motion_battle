@@ -1,6 +1,7 @@
 class ParticipationsController < ApplicationController
   def index
-    @participations = Participation.all
+
+    @participations = Participation.last(2)
   end
 
   def create
