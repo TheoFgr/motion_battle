@@ -1,17 +1,62 @@
-.container-participations {
+.title-congrats {
+  text-align: center;
+  margin-top: 3%;
+  font-family: 'MedievalSharp', 'cursive';
+  font-size: 64px;
+  color: rgb(193,186,202);
+}
+
+.stats {
+  display: inline;
+}
+
+.container-data {
+  background-color: #777;
   width: 60%;
   margin: auto;
-  margin-top: 10%;
-  background-color: #777;
-  opacity: 0.7;
+  display: flex;
+  justify-content: space-evenly;
+  opacity: 0.65;
+  margin-top: 4%;
+  align-content: center;
+  border-radius: 7px;
+  box-shadow: 0px 1px 7px #e96571;
+  background-color: rgb(193,186,202);
+
+  p {
+    font-size: 24px;
+    margin-top: 2%;
+    opacity: 1;
+    font-family: 'Hubballi';
+    font-weight: 900;
+  }
 }
 
-.result-participations {
-  list-style: none;
-  display: inline;
+body {
+  background-image: url("backcastel.jpg");
+  object-fit: cover;
+  background-size: cover;
 }
 
-.title-participations {
-  list-style: none;
-  display: inline;
+.btn-display {
+  font-family: 'Hubballi';
+  font-size: 42px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 12%;
+
+  a {
+    background-color: #e96571;
+    border: solid;
+    color: rgb(193,186,202);
+    opacity: 0.7;
+    border-radius: 7px;
+    width: 15%;
+    text-align: center;
+
+    &:hover {
+      color: white;
+      transition: 1s;
+    }
+  }
 }

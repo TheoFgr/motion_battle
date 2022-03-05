@@ -1,5 +1,5 @@
 .big-container{
-  background-image: asset-url("font-chateau.png") !important;
+  // background-image: asset-url("font-chateau.png") !important;
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -96,13 +96,7 @@
 
 
 
-.bouton-home-page {
-  color: #0E0101;
-  text-decoration: none;
-  &:hover {
-    color:#0E0101 !important;
-  }
-}
+
 
 
 .bouton-container {
