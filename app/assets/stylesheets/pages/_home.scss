@@ -8,6 +8,14 @@ body {
   font-size: 5.5rem;
   margin-bottom: 85px;
   text-align:center;
+  margin-top: 3%;
+  font-family: 'MedievalSharp';
+  font-size: 5.5rem;
+  color: rgb(193,186,202);
+  margin-bottom: 85px;
+  text-shadow: 2px 2px 5px purple;
+  text-align: center;
+  font-size: 140px;
 }
 
 .btns-home {
@@ -26,35 +34,27 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.title {
-  margin-top: 3%;
-  font-family: 'MedievalSharp', cursive;
-  font-size: 5.5rem;
-  color: white;
-  margin-bottom: 85px;
-  text-shadow: 1px 1px 1px purple;
-  font-family: 'MedievalSharp', cursive;
-  text-align: center;
+  margin-top: 7%;
 }
 
 .rules-option{
   display: flex;
   justify-content: space-evenly;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   position: relative;
-  margin-top: 5%;
+  margin-top: 8%;
 }
 
 .option {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   position: relative;
   text-align: center;
 }
 
 .quit {
-  font-size: 3.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2.5rem;
   position: relative;
   text-align: center;
   margin-top: 5%;
