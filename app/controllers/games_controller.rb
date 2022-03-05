@@ -8,4 +8,5 @@ class GamesController < ApplicationController
     @game = Game.create(status: :waiting) unless @game
     redirect_to game_path(@game)
   end
+
 end
