@@ -9,6 +9,7 @@ export default class Player {
     this.velocity = velocity;
     this.tileMap = tileMap;
     this.score = 0;
+    this.kill = 0;
 
     this.currentMovingDirection = null;
     this.requestedMovingDirection = null;
@@ -29,8 +30,8 @@ export default class Player {
     const collideEnemies = enemies.filter((enemy)=>enemy.collideWith(this));
     collideEnemies.forEach((enemy) =>{
       enemies.splice(enemies.indexOf(enemy),1);
-      this.score += 100
-      console.log(this.score)
+      this.score += 100;
+      this.kill += 1;
     });
   }
 

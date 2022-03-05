@@ -1,112 +1,60 @@
-.big-container{
-  background-image: asset-url("font-chateau.png") !important;
+body {
+  background-image: url('BGhome.jpg');
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  background-position-y: 75%;
-  overflow: hidden;
-  //background-repeat: no-repeat;
-  //background-position: center;
-  //background-color: #444;
-}
-
-.panneau-fleche-droite {
-  position:absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 95%;
-  img {
-    height: 100%;
-  }
 }
 
 .title h1 {
-  font-family: "UnifrakturCook";
   font-size: 5.5rem;
   margin-bottom: 85px;
   text-align:center;
-  text-shadow:   -1px -1px 0 black,
-  1px -1px 0 black,
-  -1px 1px 0 black,
-  1px 1px 0 black;
-  color: darkred;
+}
+
+.btns-home {
+  width: 80%;
+  margin: auto;
 }
 
 .new-game {
   font-size: 3.5rem;
   text-decoration: none !important;
-  text-shadow:   -1px -1px 0 white,
-  1px -1px 0 white,
-  -1px 1px 0 white,
-  1px 1px 0 white;
-  color: black;
-  font-family: "UnifrakturCook";
   position:relative;
   text-align: center;
   bottom: 0;
   height: 34%;
-  &:hover {
-    color:#0E0101 !important;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.title {
+  margin-top: 3%;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 5.5rem;
+  color: white;
+  margin-bottom: 85px;
+  text-shadow: 1px 1px 1px purple;
+  font-family: 'MedievalSharp', cursive;
+  text-align: center;
 }
 
 .rules-option{
   display: flex;
   justify-content: space-evenly;
   font-size: 3.5rem;
-  font-family: "UnifrakturCook";
   position: relative;
-  text-shadow:   -1px -1px 0 white,
-  1px -1px 0 white,
-  -1px 1px 0 white,
-  1px 1px 0 white;
-  color: black;
   margin-top: 5%;
-
 }
 
 .option {
   font-size: 3.5rem;
-  font-family: "UnifrakturCook";
   position: relative;
   text-align: center;
-  text-shadow:   -1px -1px 0 white,
-  1px -1px 0 white,
-  -1px 1px 0 white,
-  1px 1px 0 white;
-  color: black;
 }
 
 .quit {
   font-size: 3.5rem;
-  font-family: "UnifrakturCook";
   position: relative;
   text-align: center;
-  margin-top: 6px;
-  text-shadow:   -1px -1px 0 white,
-  1px -1px 0 white,
-  -1px 1px 0 white,
-  1px 1px 0 white;
-  color: black;
-
-}
-
-
-
-.bouton-home-page {
-  color: #0E0101;
-  text-decoration: none;
-  &:hover {
-    color:#0E0101 !important;
-  }
-}
-
-
-.bouton-container {
-  position: absolute;
-  width: 100%;
-
+  margin-top: 5%;
 }
