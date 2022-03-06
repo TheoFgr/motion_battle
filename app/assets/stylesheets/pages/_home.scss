@@ -1,6 +1,5 @@
 body {
-  background-image: url('BGhome.jpg');
-
+  background-image: url('backcastel.jpg');
   background-size: cover;
 }
 
@@ -8,14 +7,8 @@ body {
   font-size: 5.5rem;
   margin-bottom: 85px;
   text-align:center;
-  margin-top: 3%;
-  font-family: 'MedievalSharp';
-  font-size: 5.5rem;
+  font-family: 'MedievalSharp', 'cursive';
   color: rgb(193,186,202);
-  margin-bottom: 85px;
-  text-shadow: 2px 2px 5px purple;
-  text-align: center;
-  font-size: 140px;
 }
 
 .btns-home {
@@ -58,5 +51,31 @@ body {
   position: relative;
   text-align: center;
   margin-top: 5%;
+}
 
+.neon {
+  font-family: 'MedievalSharp', 'cursive';
+  color: rgb(193,186,202);
+  background-color: rgba(193,186,202, .2);
+  width: 45%;
+
+  &:hover {
+  transition: 1s;
+  color: white;
+  background-color: #e96571;
+  }
+}
+
+.neon1 {
+  font-family: 'MedievalSharp', 'cursive';
+  color: rgb(193,186,202);
+  background-color: rgba(193,186,202, .2);
+  width: 20%;
+  text-align: center;
+
+  &:hover {
+  transition: 1s;
+  color: white;
+  background-color: #e96571;
+  }
 }
