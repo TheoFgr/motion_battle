@@ -60,3 +60,30 @@ body {
   text-align: center;
   margin-top: 5%;
 }
+
+.neon {
+  font-family: 'MedievalSharp', 'cursive';
+  color: rgb(193,186,202);
+  background-color: rgba(193,186,202, .2);
+  width: 45%;
+
+  &:hover {
+  transition: 1s;
+  color: white;
+  background-color: #e96571;
+  }
+}
+
+.neon1 {
+  font-family: 'MedievalSharp', 'cursive';
+  color: rgb(193,186,202);
+  background-color: rgba(193,186,202, .2);
+  width: 20%;
+  text-align: center;
+
+  &:hover {
+  transition: 1s;
+  color: white;
+  background-color: #e96571;
+  }
+}
