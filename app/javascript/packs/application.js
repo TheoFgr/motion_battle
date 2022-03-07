@@ -14,8 +14,3 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
-import { game } from "../games/game.js"
-
-document.querySelector(".game").addEventListener("click", () => {
-  game()
-},{once: true})
