@@ -1,5 +1,6 @@
 import player1 from "../images/player1.png";
 import { MovingDirection } from "./moving_direction";
+import Rails from '@rails/ujs';
 
 export default class Player {
   constructor(x, y, tileSize, velocity, tileMap){
@@ -32,6 +33,12 @@ export default class Player {
       enemies.splice(enemies.indexOf(enemy),1);
       this.score += 100;
       this.kill += 1;
+      if (this.score == 100) {
+        Rails.ajax({
+          type: "PATCH",
+          url: window.location.href
+        })
+      }
     });
   }
 
