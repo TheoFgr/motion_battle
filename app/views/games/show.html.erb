@@ -6,11 +6,9 @@
     <div class = "player-display">
       <div class= "controller" data-controller='game-subscriptions'  data-game-subscriptions-game-id-value="<%= @game.id %>">
         <div class="participations" data-game-subscriptions-target="participations">
-          <ul>
             <% @game.participations.each do |participation| %>
-              <li><%=  render "participations/participation", participation: participation %>, </li>
+              <%=  render "participations/participation", participation: participation %>
             <% end %>
-          </ul>
         </div>
         <div class= "game"  data-game-subscriptions-target="game"></div>
       </div>
