@@ -1,30 +1,82 @@
-.big-container{
-  background-image: asset-url("font-chateau.png") !important;
+body {
+  background-image: url('backcastel.jpg');
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  background-position-y: 75%;
-  overflow: hidden;
-  //background-repeat: no-repeat;
-  //background-position: center;
-  //background-color: #444;
+  text-align: center;
 }
 
-.panneau {
-  position:absolute;
+
+.title h1 {
+  font-size: 4.0rem;
+  margin-bottom: 85px;
+  text-align:center;
+  font-family: 'MedievalSharp', 'cursive';
+  color: rgb(193,186,202);
+  margin-top: 3%;
+}
+
+.btns-home {
+  width: 80%;
+  margin: auto;
+}
+
+.new-game {
+  font-size: 3.5rem;
+  text-decoration: none !important;
+  position:relative;
+  text-align: center;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 95%;
-  img {
-    height: 100%;
-  }
+  height: 34%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -8%;
+  color: rgb(193,186,202);
+  font-family: 'MedievalSharp', 'cursive';
+}
+
+.rules-option{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2.5rem;
+  position: relative;
+  margin-top: 0%;
+  color: rgb(193,186,202);
+  font-family: 'MedievalSharp', 'cursive';
 }
 
 
-.bouton-container {
-  position: absolute;
-  width: 100%;
+.option {
+  font-size: 2.5rem;
+  position: relative;
+  text-align: center;
+  font-family: 'Hubballi';
+}
 
+.quit {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2.0rem;
+  position: relative;
+  text-align: center;
+  margin-top: 1%;
+  font-family: 'Hubballi';
+}
+
+.form-check-label {
+  color: rgb(193,186,202);
+  font-family: 'MedievalSharp', 'cursive';
+}
+
+.form-check-input.is-valid {
+  border-color: #0E0307 !important;
+}
+
+.label {
+  color: rgb(193,186,202);
+  font-family: 'MedievalSharp', 'cursive';
+}
+
+#login {
+  font-size: 20px;
 }
