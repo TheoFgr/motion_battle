@@ -1,0 +1,21 @@
+<h1 class="title-congrats">VICTORY / DEFEAT</h1>
+<div class="all-data">
+  <div class="container-data">
+    <p class="stats">Rank</p>
+    <p class="stats">Name</p>
+    <p class="stats">Survival Time</p>
+    <p class="stats">Kill(s)</p>
+  </div>
+  <div class="container-data">
+    <% participations.each_with_index do |participation, index| %>
+      <p class="stats"><%= index + 1 %></p>
+      <p class="stats"><%= participation.user.pseudo %></p>
+      <p class="stats">TODO GAME DURATION</p>
+      <p class="stats">TODO KILS COUNT</p>
+    <% end %>
+  </div>
+</div>
+<div class="btn-display">
+  <%= link_to "New Game", games_path, method: :post, class: "btn-newgame"%>
+  <%= link_to "Quit", root_path, class:"btn-quit"%>
+</div>

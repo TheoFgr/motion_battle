@@ -10,7 +10,11 @@ export default class extends Controller {
       { channel: "GameChannel", id: this.gameIdValue },
       {received: data => this.routeAction(data)}
     )
-    }
+  }
+
+  disconnect () {
+    this.channel.unsubscribe()
+  }
 
   routeAction(data){
     console.log(data)
@@ -19,6 +23,9 @@ export default class extends Controller {
         this.gameContainerTarget.innerHTML = data.content
         break;
       case "new_participation":
+        this.gameContainerTarget.innerHTML = data.content;
+        break;
+      case "game_end":
         this.gameContainerTarget.innerHTML = data.content;
         break;
     }

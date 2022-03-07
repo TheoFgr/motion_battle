@@ -1,8 +1,7 @@
 <div class="container-game" data-controller='game-subscriptions' data-game-subscriptions-game-id-value="<%= @game.id %>">
   <h1>Lobby n° <%= @game.id %></h1>
-  <div id='canvas-container' data-game-subscriptions-target="gameContainer">
-    <p>Click on <em>"waiting line"</em> and wait for your friends to start the game</p>
-    <%= button_to "waiting line", participations_path, methode: :post, remote: true, class:"btn-queue"%>
+  <div id='canvas-container' data-game-subscriptions-target="gameContainer" data-user-id=<%= current_user.id %>>
+    <%= render 'participations/participations', participations: @participations %>
   </div>
 </div>
 
