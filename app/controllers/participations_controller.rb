@@ -1,6 +1,5 @@
 class ParticipationsController < ApplicationController
   def index
-
     @participations = Participation.last(2)
   end
 
@@ -9,6 +8,8 @@ class ParticipationsController < ApplicationController
     @participation.user = current_user
     @game = Game.last
     @participation.game = @game
+    return if @game.participations.where(user: current_user).any?
+
     if @participation.save
       @participations = @game.participations
       GameChannel.broadcast_to(
