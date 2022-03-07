@@ -1,7 +1,7 @@
 import grassimage from "../images/green-emeraude.jpg"
 import newgrass from "../images/rsz_wall.jpg"
-import wall from "../images/wall.jpg"
-import rock from "../images/rsz_caillou.jpg"
+// import wall from "../images/wall.jpg"
+// import rock from "../images/rsz_caillou.jpg"
 import Player from './player.js'
 import { MovingDirection } from "./moving_direction"
 import Enemy from "./enemy.js"
