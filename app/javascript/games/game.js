@@ -22,7 +22,7 @@ const game = () => {
       ctx.fillText("Score: " + Player.score, 20, 40);
     }
 
-    setInterval(gameLoop, 1000 / 150);
+    setInterval(gameLoop, 1000 / 75);
   };
 }
 

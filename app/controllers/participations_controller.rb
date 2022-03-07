@@ -10,12 +10,14 @@ class ParticipationsController < ApplicationController
     @game = Game.last
     @participation.game = @game
     if @participation.save
+      @participations = @game.participations
       GameChannel.broadcast_to(
         @game,{
           action: "new_participation",
-          content: render_to_string(partial: "participation", locals: { participation: @participation })
+          content: render_to_string(partial: "participations", locals: { participations: @participations })
         }
-        )
+      )
+      @game.start_if_needed
     else
       redirect_to root_path
     end

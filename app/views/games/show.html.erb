@@ -1,20 +1,11 @@
-<div class="container-game">
+<div class="container-game" data-controller='game-subscriptions' data-game-subscriptions-game-id-value="<%= @game.id %>">
   <h1>Lobby n° <%= @game.id %></h1>
-  <p>Click on <em>"waiting line"</em> and wait for your friends to start the game</p>
-  <div class="join-queue">
+  <div id='canvas-container' data-game-subscriptions-target="gameContainer">
+    <p>Click on <em>"waiting line"</em> and wait for your friends to start the game</p>
     <%= button_to "waiting line", participations_path, methode: :post, remote: true, class:"btn-queue"%>
-    <div class = "player-display">
-      <div class= "controller" data-controller='game-subscriptions'  data-game-subscriptions-game-id-value="<%= @game.id %>">
-        <div class="participations" data-game-subscriptions-target="participations">
-            <% @game.participations.each do |participation| %>
-              <%=  render "participations/participation", participation: participation %>
-            <% end %>
-        </div>
-        <div class= "game"  data-game-subscriptions-target="game"></div>
-      </div>
-    </div>
   </div>
 </div>
+
 <div class="firefly"></div>
 <div class="firefly"></div>
 <div class="firefly"></div>
