@@ -15,12 +15,17 @@ class ParticipationsController < ApplicationController
       GameChannel.broadcast_to(
         @game,{
           action: "new_participation",
-          content: render_to_string(partial: "participations", locals: { participations: @participations })
-        }
+          content: render_to_string(partial: "participations", locals: { participations: @participations })}
       )
       @game.start_if_needed
     else
       redirect_to root_path
     end
+  end
+
+  def update
+    @participation = Participation.where(user_id: params['user_id'], game_id: params['game_id']).first
+    # TODO METTRE UNE VALEUR PAR DEFAUT ET INCREMENTER
+    @participation.update(score: 100, kill_count: 1)
   end
 end

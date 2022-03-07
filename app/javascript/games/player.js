@@ -33,6 +33,11 @@ export default class Player {
       enemies.splice(enemies.indexOf(enemy),1);
       this.score += 100;
       this.kill += 1;
+
+      // patch la participation
+      this.#patchParticipation();
+
+
       if (this.score == 100) {
         Rails.ajax({
           type: "PATCH",
@@ -40,6 +45,22 @@ export default class Player {
         })
       }
     });
+  }
+
+  #patchParticipation() {
+    let url = window.location.pathname;
+    let gameId = url.substring(url.lastIndexOf('/') + 1);
+    let userId = document.getElementById('canvas-container').dataset.userId
+
+    let formData = new FormData()
+    formData.append('game_id', gameId);
+    formData.append('user_id', userId);
+
+    Rails.ajax({
+      url: '/participations',
+      type: 'PATCH',
+      data: formData
+    })
   }
 
   #loadPlayerImages() {

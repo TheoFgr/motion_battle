@@ -2,7 +2,7 @@ class Game < ApplicationRecord
   has_many :participations
   enum status:  [:waiting, :start, :end]
 
-  MAX_PLAYERS_COUNT = 2
+  MAX_PLAYERS_COUNT = 1
 
   def start_if_needed
     return false unless participations.count == MAX_PLAYERS_COUNT

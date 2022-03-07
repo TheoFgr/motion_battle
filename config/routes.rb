@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   end
 
   resources :participations, only: [:create]
+  resource :participations, only: [:update]
 end
