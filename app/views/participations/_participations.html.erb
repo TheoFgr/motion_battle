@@ -1,0 +1,10 @@
+<div data-game-subscriptions-target="subscriptions">
+  <% participations.each do |participation| %>
+    <ul>
+      <li>
+        <%= participation.id %>
+        <%= participation.user.pseudo %>
+      </li>
+    </ul>
+  <% end %>
+</div>

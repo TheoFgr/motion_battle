@@ -2,9 +2,9 @@ class Game < ApplicationRecord
   has_many :participations
   enum status:  [:waiting, :start, :end]
 
-  MAX_PLAYERS_COUNT = 2
+  MAX_PLAYERS_COUNT = 1
 
-  def start
+  def start_if_needed
     return false unless participations.count == MAX_PLAYERS_COUNT
     if self.start!
       GameChannel.broadcast_to(
@@ -12,7 +12,7 @@ class Game < ApplicationRecord
           action: "game_starting",
           content: ActionController::Base.new.render_to_string(partial: "games/gameplay", locals: { game: self })
         }
-        )
+      )
     else
 
     end

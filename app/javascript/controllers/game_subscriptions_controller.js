@@ -3,7 +3,7 @@ import consumer from "../channels/consumer"
 
 export default class extends Controller {
   static values = { gameId: Number }
-  static targets = ["participations", "game"]
+  static targets = ["gameContainer"]
 
   connect() {
     this.channel = consumer.subscriptions.create(
@@ -15,11 +15,11 @@ export default class extends Controller {
   routeAction(data){
     console.log(data)
     switch(data.action){
-      case "new_participation":
-        this.participationsTarget.insertAdjacentHTML("beforeend", data.content)
-        break;
       case "game_starting":
-        this.gameTarget.innerHTML = data.content
+        this.gameContainerTarget.innerHTML = data.content
+        break;
+      case "new_participation":
+        this.gameContainerTarget.innerHTML = data.content;
         break;
     }
   }
