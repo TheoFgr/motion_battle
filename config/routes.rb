@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :rankings, only: [:index]
+
+  resources :rankings, only: [:index] do
+    collection do
+      get 'rules'
+    end
+  end
 
   resources :games, except: [:destroy, :edit, :update, :index] do
       resources :participations, only: [:index]
