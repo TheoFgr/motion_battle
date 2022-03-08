@@ -65,3 +65,17 @@ body {
   padding: 1%;
   border-radius: 7px
 }
+
+.waiting-participations {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2.0rem;
+  text-align: center;
+  margin-top: 1%;
+  font-family: 'Hubballi';
+  background-color: rgba(193,186,202, .2);
+  color: white;
+  width: 25%;
+  margin: auto;
+  padding: 0px;
+}

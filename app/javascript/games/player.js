@@ -59,7 +59,7 @@ export default class Player {
       this.#patchParticipation();
 
 
-      if (this.score == 200) {
+      if (this.score == 100) {
         Rails.ajax({
           type: "PATCH",
           url: window.location.href
