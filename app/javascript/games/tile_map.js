@@ -93,6 +93,7 @@ export default class TileMap {
 
 
   didCollideWithEnvironment(x, y, direction) {
+
     if (direction == null){
       return;
     }
