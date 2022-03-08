@@ -8,6 +8,17 @@ import player7 from "../images/cher7.png";
 import player8 from "../images/cher8.png";
 import player9 from "../images/cher9.png";
 import player10 from "../images/cher10.png";
+import player1v from "../images/cher1v.png";
+import player2v from "../images/cher2v.png";
+import player3v from "../images/cher3v.png";
+import player4v from "../images/cher4v.png";
+import player5v from "../images/cher5v.png";
+import player6v from "../images/cher6v.png";
+import player7v from "../images/cher7v.png";
+import player8v from "../images/cher8v.png";
+import player9v from "../images/cher9v.png";
+import player10v from "../images/cher10v.png";
+import test from "../sounds/pfou.m4a";
 import { MovingDirection } from "./moving_direction";
 import Rails from '@rails/ujs';
 
@@ -20,12 +31,18 @@ export default class Player {
     this.tileMap = tileMap;
     this.score = 0;
     this.kill = 0;
+    this.angle = 0;
+    this.playerImageIndex = 0;
 
     this.currentMovingDirection = null;
     this.requestedMovingDirection = null;
 
+
+
     this.playerAnimationTimerDefault = 10;
     this.playerAnimationTimer = null;
+
+    this.wakaSound = new Audio(test)
 
 
     document.addEventListener("keydown", this.#keydown)
@@ -42,9 +59,10 @@ export default class Player {
 
   draw(ctx, enemies) {
     this.#move();
+    this.#loadPlayerImages();
+    this.#animate();
     ctx.drawImage(this.playerImages[this.playerImageIndex], this.x, this.y, this.tileSize, this.tileSize)
     this.#eatEnemy(enemies);
-    this.#animate();
   }
 
 
@@ -52,14 +70,16 @@ export default class Player {
     const collideEnemies = enemies.filter((enemy)=>enemy.collideWith(this));
     collideEnemies.forEach((enemy) =>{
       enemies.splice(enemies.indexOf(enemy),1);
+      this.wakaSound.play();
       this.score += 100;
       this.kill += 1;
+
 
       // patch la participation
       this.#patchParticipation();
 
 
-      if (this.score == 200) {
+      if (this.score == 100) {
         Rails.ajax({
           type: "PATCH",
           url: window.location.href
@@ -85,56 +105,85 @@ export default class Player {
   }
 
   #loadPlayerImages() {
-    const playerImage1 = new Image();
-    playerImage1.src = player1;
+    if (this.angle === 0) {
+      this.playerImage1 = new Image();
+      this.playerImage1.src = player1;
 
-    const playerImage2 = new Image();
-    playerImage2.src = player2;
+      this.playerImage2 = new Image();
+      this.playerImage2.src = player2;
 
-    const playerImage3 = new Image();
-    playerImage3.src = player3;
+      this.playerImage3 = new Image();
+      this.playerImage3.src = player3;
 
-    const playerImage4 = new Image();
-    playerImage4.src = player4;
+      this.playerImage4 = new Image();
+      this.playerImage4.src = player4;
 
-    const playerImage5 = new Image();
-    playerImage5.src = player5;
+      this.playerImage5 = new Image();
+      this.playerImage5.src = player5;
 
-    const playerImage6 = new Image();
-    playerImage6.src = player6;
+      this.playerImage6 = new Image();
+      this.playerImage6.src = player6;
 
-    const playerImage7 = new Image();
-    playerImage7.src = player7;
+      this.playerImage7 = new Image();
+      this.playerImage7.src = player7;
 
-    const playerImage8 = new Image();
-    playerImage8.src = player8;
+      this.playerImage8 = new Image();
+      this.playerImage8.src = player8;
 
-    const playerImage9 = new Image();
-    playerImage9.src = player9;
+      this.playerImage9 = new Image();
+      this.playerImage9.src = player9;
 
-    const playerImage10 = new Image();
-    playerImage10.src = player10;
+      this.playerImage10 = new Image();
+      this.playerImage10.src = player10;
+    } else {
+      this.playerImage1 = new Image();
+      this.playerImage1.src = player1v;
+
+      this.playerImage2 = new Image();
+      this.playerImage2.src = player2v;
+
+      this.playerImage3 = new Image();
+      this.playerImage3.src = player3v;
+
+      this.playerImage4 = new Image();
+      this.playerImage4.src = player4v;
+
+      this.playerImage5 = new Image();
+      this.playerImage5.src = player5v;
+
+      this.playerImage6 = new Image();
+      this.playerImage6.src = player6v;
+
+      this.playerImage7 = new Image();
+      this.playerImage7.src = player7v;
+
+      this.playerImage8 = new Image();
+      this.playerImage8.src = player8v;
+
+      this.playerImage9 = new Image();
+      this.playerImage9.src = player9v;
+
+      this.playerImage10 = new Image();
+      this.playerImage10.src = player10v;
+  }
 
     this.playerImages = [
-      playerImage1,
-      playerImage2,
-      playerImage3,
-      playerImage4,
-      playerImage5,
-      playerImage6,
-      playerImage7,
-      playerImage8,
-      playerImage9,
-      playerImage10,
+      this.playerImage1,
+      this.playerImage2,
+      this.playerImage3,
+      this.playerImage4,
+      this.playerImage5,
+      this.playerImage6,
+      this.playerImage7,
+      this.playerImage8,
+      this.playerImage9,
+      this.playerImage10,
     ];
-    this.playerImageIndex = 0;
-
   }
 
   #keydown = (event) => {
     //up
     if (event.keyCode == 38) {
-      console.log('up')
       if (this.currentMovingDirection == MovingDirection.down)
           this.currentMovingDirection = MovingDirection.up;
           this.requestedMovingDirection = MovingDirection.up;
@@ -142,7 +191,6 @@ export default class Player {
 
     //down
     if (event.keyCode == 40) {
-      console.log('down')
       if (this.currentMovingDirection == MovingDirection.up)
           this.currentMovingDirection = MovingDirection.down;
           this.requestedMovingDirection = MovingDirection.down;
@@ -150,7 +198,6 @@ export default class Player {
 
     //left
     if (event.keyCode == 37) {
-      console.log('left')
       if (this.currentMovingDirection == MovingDirection.right)
           this.currentMovingDirection = MovingDirection.left;
           this.requestedMovingDirection = MovingDirection.left;
@@ -158,7 +205,6 @@ export default class Player {
 
     //right
     if (event.keyCode == 39) {
-      console.log('right')
       if (this.currentMovingDirection == MovingDirection.left)
           this.currentMovingDirection = MovingDirection.right;
           this.requestedMovingDirection = MovingDirection.right;
@@ -178,7 +224,6 @@ export default class Player {
           this.requestedMovingDirection,
           )
         )
-
       this.currentMovingDirection = this.requestedMovingDirection;
     }
 
@@ -203,23 +248,23 @@ export default class Player {
 
   switch (this.currentMovingDirection) {
     case MovingDirection.up:
-      this.y -= this.velocity
-      this.playerRotation = this.Rotation.up;
+      this.y -= this.velocity;
+      this.angle = this.Rotation.up;
       break;
 
     case MovingDirection.down:
-      this.y += this.velocity
-      this.playerRotation = this.Rotation.down;
+      this.y += this.velocity;
+      this.angle = this.Rotation.down;
       break;
 
     case MovingDirection.left:
-      this.x -= this.velocity
-      this.playerRotation = this.Rotation.left;
+      this.x -= this.velocity;
+      this.angle = this.Rotation.left;
       break;
 
     case MovingDirection.right:
-      this.x += this.velocity
-      this.playerRotation = this.Rotation.right;
+      this.x += this.velocity;
+      this.angle = this.Rotation.right;
       break;
   }
 
