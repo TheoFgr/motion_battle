@@ -4,8 +4,8 @@ body {
 }
 
 .title h1 {
-  font-size: 5.5rem;
-  margin-bottom: 85px;
+  font-size: 6rem;
+  margin-bottom: 7%;
   text-align:center;
   font-family: 'MedievalSharp', 'cursive';
   color: rgb(193,186,202);
@@ -18,17 +18,7 @@ body {
 }
 
 .new-game {
-  font-size: 3.5rem;
-  text-decoration: none !important;
-  position:relative;
-  text-align: center;
-  bottom: 0;
-  height: 34%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 7%;
+  font-size: 3rem;
 }
 
 .rules-option{
@@ -36,7 +26,7 @@ body {
   justify-content: space-evenly;
   font-size: 2.5rem;
   position: relative;
-  margin-top: 8%;
+  margin-top: 3%;
 }
 
 .option {
@@ -48,10 +38,10 @@ body {
 .quit {
   display: flex;
   justify-content: space-evenly;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   position: relative;
   text-align: center;
-  margin-top: 5%;
+  margin-top: 4%;
 }
 
 .neon {

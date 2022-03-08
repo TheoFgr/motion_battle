@@ -1,38 +1,35 @@
-<div class="big-container">
-    <div class="banner"></div>
-    <div class="banner2"></div>
-  <body>
-  <div class="title">
-    <h1>Log in</h1>
-  </div>
-  <div class="bouton-container">
-    <div class="bouton-content">
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="new-game">
-          <%= f.input :email,
-                      required: false,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" } %>
-        </div>
-        <div class="rules-option">
-          <%= f.input :password,
-                      required: false,
-                      input_html: { autocomplete: "current-password" } %>
-        </div>
-        <div class="quit">
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-        </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Log in" , id: "login" %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-    <%= render "devise/shared/links" %>
-  </body>
+<div class="title">
+  <h1>Login</h1>
 </div>
+<div class="bouton-container">
+  <div class="bouton-content">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="email-input">
+        <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
+      </div>
+      <div class="pw-input">
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "current-password" } %>
+      </div>
+      <div class="remember-me">
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "connect" , id: "login" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+  <%= render "devise/shared/links" %>
+
+
 
 <div class="firefly"></div>
 <div class="firefly"></div>

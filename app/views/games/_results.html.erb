@@ -10,8 +10,8 @@
     <% participations.each_with_index do |participation, index| %>
       <p class="stats"><%= index + 1 %></p>
       <p class="stats"><%= participation.user.pseudo %></p>
-      <p class="stats">TODO GAME DURATION</p>
-      <p class="stats">TODO KILS COUNT</p>
+      <p class="stats"><%= participation.elapsed_time %>s</p>
+      <p class="stats"> <%= participation.score %></p>
     <% end %>
   </div>
 </div>

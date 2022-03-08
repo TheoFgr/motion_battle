@@ -6,7 +6,7 @@ body {
 
 
 .title h1 {
-  font-size: 4.0rem;
+  font-size: 6rem;
   margin-bottom: 85px;
   text-align:center;
   font-family: 'MedievalSharp', 'cursive';
@@ -19,23 +19,12 @@ body {
   margin: auto;
 }
 
-
-.rules-option{
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 2.5rem;
-  position: relative;
-  margin-top: 0%;
-  color: rgb(193,186,202);
-  font-family: 'MedievalSharp', 'cursive';
-}
-
-
 .option {
   font-size: 2.5rem;
   position: relative;
   text-align: center;
   font-family: 'Hubballi';
+  padding: 1%;
 }
 
 .quit {
@@ -50,7 +39,7 @@ body {
 
 .form-check-label {
   color: rgb(193,186,202);
-  font-family: 'MedievalSharp', 'cursive';
+  font-family: 'Hubballi';
 }
 
 .form-check-input.is-valid {
@@ -64,4 +53,26 @@ body {
 
 #login {
   font-size: 20px;
+}
+
+.form-label {
+  font-size: 2rem;
+  font-family: 'Hubballi';
+  color: rgb(193,186,202);
+}
+
+.remember-me {
+  display: flex;
+  justify-content: center;
+}
+
+.form-actions {
+  margin-bottom: 2%;
+}
+
+.form-control {
+  width: 30%;
+  margin: auto;
+  opacity: 0.6;
+  border-radius: 7px;
 }
