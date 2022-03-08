@@ -1,6 +1,9 @@
 import { MovingDirection } from "./moving_direction";
-import poutine from "../images/dragonfly.png";
-import poupou from "../images/poutine1.jpg";
+import dragN1 from "../images/dragN1.png";
+import dragN2 from "../images/dragN2.png";
+import dragN3 from "../images/dragN3.png";
+import dragN4 from "../images/dragN4.png";
+import dragN5 from "../images/dragN5.png";
 
 export default class Enemy {
   constructor(x, y, tileSize, velocity, tileMap){
@@ -16,12 +19,13 @@ export default class Enemy {
 
     this.directionTimerDefault = this.#random(10, 50);
     this.directionTimer = this.directionTimerDefault;
+
   }
 
   draw(ctx) {
     this.#move();
     this.#changeDirection();
-    ctx.drawImage(this.image, this.x, this.y, this.tileSize, this.tileSize)
+    ctx.drawImage(this.images, this.x, this.y, this.tileSize, this.tileSize);
   }
 
   collideWith(player){
@@ -90,12 +94,25 @@ export default class Enemy {
   }
 
   #loadImages(){
-    this.poutine1 = new Image()
-    this.poutine1.src = poupou
 
-    this.poutine2 = new Image()
-    this.poutine2.src = poutine
+    this.dragN1 = new Image();
+    this.dragN1.src = dragN1;
 
-    this.image = this.poutine2;
+    this.dragN2 = new Image();
+    this.dragN2.src = dragN2;
+
+    this.dragN3 = new Image();
+    this.dragN3.src = dragN3;
+
+    this.dragN4 = new Image();
+    this.dragN4.src = dragN4;
+
+    this.dragN5 = new Image()
+    this.dragN5.src = dragN5
+
+    this.images =
+    this.dragN4;
+
   }
+
 }

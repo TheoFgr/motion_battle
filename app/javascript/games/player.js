@@ -92,11 +92,7 @@ export default class Player {
     playerImage2.src = player2;
 
     const playerImage3 = new Image();
-    if (this.x >= 0) {
-      playerImage3.src = player3;
-    }else {
-      playerImage3.src = player3.mirrorImage(ctx, image, 0, 0, true, false);
-    }
+    playerImage3.src = player3;
 
     const playerImage4 = new Image();
     playerImage4.src = player4;
