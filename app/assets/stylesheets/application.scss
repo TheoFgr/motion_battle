@@ -21,11 +21,12 @@ body, html {
 }
 
 a {
-  color: purple;
+  color: rgb(193,186,202);
   text-decoration: none;
 
   &:hover {
-    color: unset;
+    transition: 1s;
+    color: #7B2681;
     text-decoration: none;
   }
 }
