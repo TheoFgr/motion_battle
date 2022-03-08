@@ -1,12 +1,11 @@
 <div data-game-subscriptions-target="subscriptions">
+  <p>Click on <em>"waiting line"</em> and wait for your friends to start the game</p>
+  <%= button_to "waiting line", participations_path, methode: :post, remote: true, class:"btn-queue"%>
   <% participations.each do |participation| %>
-    <ul>
+    <ul class='waiting-participations'>
       <li>
-        <%= participation.id %>
         <%= participation.user.pseudo %>
       </li>
     </ul>
   <% end %>
-  <p>Click on <em>"waiting line"</em> and wait for your friends to start the game</p>
-  <%= button_to "waiting line", participations_path, methode: :post, remote: true, class:"btn-queue"%>
 </div>
