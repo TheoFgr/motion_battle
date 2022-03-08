@@ -1,0 +1,26 @@
+.title-profil h1 {
+  font-size: 4.0rem;
+  margin-top: 1%;
+  text-align:center;
+  font-family: 'MedievalSharp', 'cursive';
+  color: rgb(193,186,202);
+}
+
+.container-data {
+  margin-top: 1.5%;
+  justify-content: flex-start;
+  padding-left: 2%;
+}
+
+
+.quit {
+  color: rgb(193,186,202);
+  font-family: 'MedievalSharp', 'cursive';
+  border-radius: 7px;
+  border: none;
+}
+
+.avatar-large {
+  width: 56px;
+  border-radius: 50%;
+}
