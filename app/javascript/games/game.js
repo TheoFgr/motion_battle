@@ -18,7 +18,7 @@ const game = () => {
       tileMap.draw(ctx);
       Player.draw(ctx, enemies);
       enemies.forEach(enemy => enemy.draw(ctx));
-      ctx.font = '50px Helvetica';
+      ctx.font = '24px Helvetica';
       ctx.fillText("Score: " + Player.score, 20, 40);
     }
 

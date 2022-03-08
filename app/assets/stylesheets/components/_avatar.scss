@@ -1,20 +1,18 @@
-.avatar {
-  width: 40px;
-  border-radius: 50%;
+.navbar-lewagon {
+  justify-content: space-between;
+  background: transparent;
 }
-.avatar-large {
-  width: 56px;
-  border-radius: 50%;
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
 }
-.avatar-bordered {
+
+.navbar-lewagon .navbar-brand img {
   width: 40px;
-  border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
 }
-.avatar-square {
-  width: 40px;
-  border-radius: 0px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
+
+.dropdown-toggle {
+  white-space: nowrap;
+  border-radius: 50%;
+  width: 45px;
 }
