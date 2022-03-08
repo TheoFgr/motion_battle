@@ -1,26 +1,26 @@
 .form-inputs {
-  display: inline-block;
-  align-items: center;
-  width: 20%;
-  margin-top: -1%;
-  color: rgb(193,186,202);
-  font-family: 'Hubballi';
+  border-radius: 7px;
+  width: 60%;
+  margin: auto;
 }
 
 .form-label {
   font-size: 1.8rem;
 }
 
-.title-sign-up h2 {
+.title-signup {
+  h1 {
   font-family: 'MedievalSharp', 'cursive';
   margin-top: 2%;
   font-size: 2.5rem;
   color: rgb(193,186,202);
+  }
 }
 
 .form-text {
-  color: white;
+  color: rgb(193,186,202);
   font-size: 15px;
+  font-style: italic;
 }
 
 .btn {
@@ -60,4 +60,8 @@
 .log-in {
   font-size: 18px;
   color: #C0BACA;
+}
+
+.email-input {
+  margin-top: 10%;
 }

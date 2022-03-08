@@ -5,12 +5,6 @@
 <div class="bouton-container">
   <div class="bouton-content" style="margin-top: -7%;">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="pseudo-input">
-        <%= f.input :pseudo,
-                    required: false,
-                    autofocus: true,
-                    input_html: { autocomplete: "pseudo" } %>
-      </div>
       <div class="email-input">
         <%= f.input :email,
                     required: false,
