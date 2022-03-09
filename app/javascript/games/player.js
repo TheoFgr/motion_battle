@@ -1,3 +1,4 @@
+// player image to right
 import player1 from "../images/cher1.png";
 import player2 from "../images/cher2.png";
 import player3 from "../images/cher3.png";
@@ -8,6 +9,7 @@ import player7 from "../images/cher7.png";
 import player8 from "../images/cher8.png";
 import player9 from "../images/cher9.png";
 import player10 from "../images/cher10.png";
+// player image to left
 import player1v from "../images/cher1v.png";
 import player2v from "../images/cher2v.png";
 import player3v from "../images/cher3v.png";
@@ -18,6 +20,7 @@ import player7v from "../images/cher7v.png";
 import player8v from "../images/cher8v.png";
 import player9v from "../images/cher9v.png";
 import player10v from "../images/cher10v.png";
+// import sound
 import test from "../sounds/pfou.m4a";
 import { MovingDirection } from "./moving_direction";
 import Rails from '@rails/ujs';
@@ -79,7 +82,7 @@ export default class Player {
       this.#patchParticipation();
 
 
-      if (this.score == 100) {
+      if (this.score == 400) {
         Rails.ajax({
           type: "PATCH",
           url: window.location.href
@@ -135,7 +138,7 @@ export default class Player {
 
       this.playerImage10 = new Image();
       this.playerImage10.src = player10;
-    } else {
+    } else if (this.angle === 2) {
       this.playerImage1 = new Image();
       this.playerImage1.src = player1v;
 
