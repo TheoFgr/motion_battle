@@ -21,7 +21,7 @@ import player8v from "../images/cher8v.png";
 import player9v from "../images/cher9v.png";
 import player10v from "../images/cher10v.png";
 // import sound
-import test from "../sounds/pfou.m4a";
+import oupouloupch from "../sounds/Oupouloupch.m4a";
 import { MovingDirection } from "./moving_direction";
 import Rails from '@rails/ujs';
 
@@ -45,7 +45,7 @@ export default class Player {
     this.playerAnimationTimerDefault = 10;
     this.playerAnimationTimer = null;
 
-    this.wakaSound = new Audio(test)
+    this.wakaSound = new Audio(oupouloupch)
 
 
     document.addEventListener("keydown", this.#keydown)
