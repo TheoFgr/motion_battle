@@ -43,7 +43,6 @@ export default class Enemy {
   }
 
   #move() {
-    console.log(this.x, this.y)
     if(!this.tileMap.didCollideWithEnvironment(this.x, this.y, this.movingDirection)){
       switch (this.movingDirection) {
         case MovingDirection.up:

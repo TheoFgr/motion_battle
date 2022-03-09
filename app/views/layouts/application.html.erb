@@ -14,7 +14,10 @@
 
   <body>
 
-    <%# <%= render 'shared/navbar' %>
+    <% unless params[:controller] == 'users' %>
+      <%= render "shared/avatar" %>
+    <% end %>
+
     <%= render 'shared/flashes' %>
 
     <%= yield %>

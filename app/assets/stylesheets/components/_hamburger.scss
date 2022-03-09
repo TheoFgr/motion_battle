@@ -1,7 +1,13 @@
 .hamburger {
   background-color: rgba(221, 25, 247, 0.2);
+  border-radius: 7px;
 }
 
 .dropdown-text {
   color: rgb(193,186,202);
+
+  &:hover {
+    background-color: rgba(221, 25, 247, 0.125);
+    color: rgb(193,186,202);
+  }
 }
