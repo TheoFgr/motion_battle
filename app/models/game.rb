@@ -7,8 +7,8 @@ class Game < ApplicationRecord
     if self.start!
       GameChannel.broadcast_to(
         self,{
-          action: “game_starting”,
-          content: ActionController::Base.new.render_to_string(partial: “games/gameplay”, locals: { game: self })
+          action: "game_starting",
+          content: ActionController::Base.new.render_to_string(partial: "games/gameplay", locals: { game: self })
         }
       )
     end
