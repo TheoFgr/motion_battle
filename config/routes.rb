@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :rankings, only: [:index] do
     collection do
       get 'rules'
+      get 'synopsis'
     end
   end
 
