@@ -1,29 +1,30 @@
 import TileMap from './tile_map.js'
 
+export default class Game {
+  constructor() {
+    this.tileSize = 32;
+    this.velocity = 2;
+    this.canvas = document.getElementById('canvas');
+    this.ctx = this.canvas.getContext('2d');
+    this.tileMap = new TileMap(this.tileSize);
+    this.Player = this.tileMap.getPlayer(this.velocity);
+    this.enemies = this.tileMap.getEnemies(this.velocity);
+    this.tileMap.setCanvasSize(this.canvas);
+  }
 
-const game = () => {
+  #gameLoop = () => {
+    this.tileMap.draw(this.ctx);
+    this.Player.draw(this.ctx, this.enemies);
+    this.enemies.forEach(enemy => enemy.draw(this.ctx));
+    this.ctx.font = '24px Helvetica';
+    this.ctx.fillText("Score: " + this.Player.score, 20, 40);
+  }
 
-  const tileSize = 32;
-  const velocity = 2;
-  const canvas = document.getElementById('canvas');
+  start() {
+    this.intervalLoop = setInterval(this.#gameLoop, 1000 / 75);
+  }
 
-  if (canvas) {
-    const ctx = canvas.getContext('2d');
-    const tileMap = new TileMap(tileSize);
-    const Player = tileMap.getPlayer(velocity);
-    const enemies = tileMap.getEnemies(velocity);
-
-    tileMap.setCanvasSize(canvas);
-    function gameLoop() {
-      tileMap.draw(ctx);
-      Player.draw(ctx, enemies);
-      enemies.forEach(enemy => enemy.draw(ctx));
-      ctx.font = '24px Helvetica';
-      ctx.fillText("Score: " + Player.score, 20, 40);
-    }
-
-    setInterval(gameLoop, 1000 / 75);
-  };
+  stop() {
+    clearInterval(this.intervalLoop)
+  }
 }
-
-export {game}

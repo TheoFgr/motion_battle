@@ -1,6 +1,6 @@
 class Game < ApplicationRecord
-  has_many :participations
-  enum status:  [:waiting, :start, :end]
+  has_many :participations, dependent: :destroy
+  enum status: [:waiting, :start, :end]
 
   MAX_PLAYERS_COUNT = 2
 
