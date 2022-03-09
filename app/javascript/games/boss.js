@@ -1,23 +1,26 @@
 import { MovingDirection } from "./moving_direction";
-import dragN1 from "../images/dragN1.png";
-import dragN2 from "../images/dragN2.png";
-import dragN3 from "../images/dragN3.png";
-import dragN4 from "../images/dragN4.png";
-import dragN5 from "../images/dragN5.png";
+import boss1 from "../images/boss1.png";
+import boss2 from "../images/boss2.png";
+import boss3 from "../images/boss3.png";
+import boss4 from "../images/boss4.png";
+import boss5 from "../images/bossN5.png";
+import tour1 from "../images/tour1.jpg"
 
-export default class Enemy {
+VELOCITY = 2;
+
+export default class Boss {
   constructor(x, y, tileSize, velocity, tileMap){
     this.x = x;
     this.y = y;
     this.tileSize = tileSize;
-    this.velocity = velocity;
+    this.velocity = VELOCITY;
     this.tileMap = tileMap;
 
     this.#loadImages();
 
     this.movingDirection = Math.floor(Math.random() * Object.keys(MovingDirection).length);
 
-    this.directionTimerDefault = this.#random(10, 40);
+    this.directionTimerDefault = this.#random(10, 20);
     this.directionTimer = this.directionTimerDefault;
 
   }
@@ -95,23 +98,26 @@ export default class Enemy {
 
   #loadImages(){
 
-    this.dragN1 = new Image();
-    this.dragN1.src = dragN1;
+    this.bossN1 = new Image();
+    this.bossN1.src = bossN1;
 
-    this.dragN2 = new Image();
-    this.dragN2.src = dragN2;
+    this.bossN2 = new Image();
+    this.bossN2.src = bossN2;
 
-    this.dragN3 = new Image();
-    this.dragN3.src = dragN3;
+    this.bossN3 = new Image();
+    this.bossN3.src = bossN3;
 
-    this.dragN4 = new Image();
-    this.dragN4.src = dragN4;
+    this.bossN4 = new Image();
+    this.bossN4.src = bossN4;
 
-    this.dragN5 = new Image()
-    this.dragN5.src = dragN5
+    this.bossN5 = new Image()
+    this.bossN5.src = bossN5
+
+    this.tour1 = new Image()
+    this.tour1 = tour1
 
     this.images =
-    this.dragN4;
+    this.bossN4;
 
   }
 
