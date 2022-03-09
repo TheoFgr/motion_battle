@@ -26,6 +26,6 @@ class ParticipationsController < ApplicationController
   def update
     @participation = Participation.where(user_id: params['user_id'], game_id: params['game_id']).first
     # TODO METTRE UNE VALEUR PAR DEFAUT ET INCREMENTER
-    @participation.update(score: 100, kill_count: 1)
+    @participation.update(score: @participation.score += 100, kill_count: @participation.kill_count += 1)
   end
 end
