@@ -13,7 +13,7 @@ class GamesController < ApplicationController
   def update
     @game = Game.find(params[:id])
     @game.update(ended_at: DateTime.now, status: :end)
-    @participations = @game.participations
+    @participations = @game.participations.order(score: :desc)
     GameChannel.broadcast_to(
       @game,{
         action: "game_end",
