@@ -6,14 +6,18 @@
     <p class="stats">Survival Time</p>
     <p class="stats">Score</p>
   </div>
-  <div class="container-data">
+  <ul class="p-0">
     <% participations.each_with_index do |participation, index| %>
-      <p class="stats"><%= index + 1 %></p>
-      <p class="stats"><%= participation.user.pseudo %></p>
-      <p class="stats"><%= participation.elapsed_time %>s</p>
-      <p class="stats"> <%= participation.score %></p>
+    <li style= "list-style: none;">
+      <div class="container-data">
+        <p class="stats"><%= index + 1 %></p>
+        <p class="stats"><%= participation.user.pseudo %></p>
+        <p class="stats"><%= participation.elapsed_time %>s</p>
+        <p class="stats"> <%= participation.score %></p>
+      </div>
+    </li>
     <% end %>
-  </div>
+  </ul>
 </div>
 <div class="btn-display">
   <%= link_to "New Game", games_path, method: :post, class: "btn-newgame"%>
