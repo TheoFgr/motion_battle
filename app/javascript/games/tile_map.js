@@ -10,6 +10,8 @@ import obHB from "../images/obHB.jpg"
 import Player from './player.js'
 import { MovingDirection } from "./moving_direction"
 import Enemy from "./enemy.js"
+import Boss from "./boss.js"
+
 
 
 export default class TileMap {
@@ -99,6 +101,24 @@ export default class TileMap {
     }
     return enemies
   }
+
+  getBoss(velocity){
+    const boss = [];
+    for (let row = 0; row < this.map.length; row++) {
+      for (let column = 0; column < this.map[row].length; column++){
+        const tile = this.map[row][column];
+        if (tile === 8) {
+          this.map[row][column] = 0;
+          boss.push(new Enemy(column * this.tileSize, row * this.tileSize, this.tileSize, velocity, this));
+        }
+      }
+    }
+    return boss
+
+  }
+
+
+
 
   draw(ctx) {
     for (let row = 0; row < this.map.length; row++) {
