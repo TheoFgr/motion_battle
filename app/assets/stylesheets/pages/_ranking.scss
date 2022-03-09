@@ -1,0 +1,37 @@
+.rules-container {
+  background-color: rgba(124,39,130, .4);
+  width: 70%;
+  margin: auto;
+  padding: 1%;
+  border-radius: 7px;
+  margin-top: 3%;
+
+    h1 {
+    text-align:center;
+    font-family: 'MedievalSharp', 'cursive';
+    color: rgb(193,186,202);
+    margin-top: 3%;
+    font-size: 4rem;
+    }
+
+    h2 {
+    text-align:center;
+    font-family: 'MedievalSharp', 'cursive';
+    color: rgb(193,186,202);
+    margin-top: 3%;
+    font-size: 2.3rem;
+    font-style: italic;
+    }
+
+    li {
+      font-family: 'Hubballi';
+      color: rgb(193,186,202);
+      margin-top: 3%;
+      font-size: 26px;
+    }
+}
+
+.rules-back {
+  margin-top: 3%;
+  font-size: 2.5rem;
+}
