@@ -10,7 +10,7 @@ import obHB from "../images/obHB.jpg"
 import Player from './player.js'
 import { MovingDirection } from "./moving_direction"
 import Enemy from "./enemy.js"
-import Boss from "./boss.js"
+import Master from "./master.js"
 
 
 
@@ -52,7 +52,7 @@ export default class TileMap {
     [4, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 4],
     [4, 1, 8, 1, 1, 1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 1, 1, 1, 8, 1, 1, 1, 4],
     [4, 1, 1, 1, 1, 1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 4],
-    [4, 1, 1, 1, 1, 1, 1, 1, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 6, 1, 1, 1, 1, 1, 1, 1, 4],
+    [4, 1, 1, 1, 1, 1, 1, 1, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 22, 1, 1, 1, 1, 1, 1, 1, 1, 1, 6, 1, 1, 1, 1, 1, 1, 1, 4],
     [4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4],
     [4, 1, 7, 12, 12, 12, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 1, 9, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7, 12, 12, 12, 10, 1, 4],
     [4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 1, 1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4],
@@ -102,18 +102,18 @@ export default class TileMap {
     return enemies
   }
 
-  getBoss(velocity){
-    const boss = [];
+  getMaster(velocity){
+    const masters = [];
     for (let row = 0; row < this.map.length; row++) {
       for (let column = 0; column < this.map[row].length; column++){
         const tile = this.map[row][column];
-        if (tile === 8) {
+        if (tile === 22) {
           this.map[row][column] = 0;
-          boss.push(new Enemy(column * this.tileSize, row * this.tileSize, this.tileSize, velocity, this));
+          masters.push(new Master(column * this.tileSize, row * this.tileSize, this.tileSize, velocity, this));
         }
       }
     }
-    return boss
+    return masters
 
   }
 

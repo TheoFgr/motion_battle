@@ -41,7 +41,6 @@ export default class Player {
     this.requestedMovingDirection = null;
 
 
-
     this.playerAnimationTimerDefault = 10;
     this.playerAnimationTimer = null;
 
@@ -60,14 +59,28 @@ export default class Player {
     up:3,
   }
 
-  draw(ctx, enemies) {
+  draw(ctx, enemies, masters) {
     this.#move();
     this.#loadPlayerImages();
     this.#animate();
     ctx.drawImage(this.playerImages[this.playerImageIndex], this.x, this.y, this.tileSize, this.tileSize)
     this.#eatEnemy(enemies);
+    this.#eatMaster(masters);
   }
 
+  #eatMaster(masters){
+    const collideMasters = masters.filter((master)=>master.collideWith(this));
+    collideMasters.forEach((master) =>{
+      masters.splice(masters.indexOf(master),1);
+      this.wakaSound.play();
+      this.score += 1000;
+      this.kill += 1;
+
+
+      // patch la participation
+      this.#patchParticipation();
+    });
+  }
 
   #eatEnemy(enemies){
     const collideEnemies = enemies.filter((enemy)=>enemy.collideWith(this));
