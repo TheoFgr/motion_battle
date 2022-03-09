@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :games, except: [:destroy, :edit, :index] do
+  resources :games, only: [:show, :create] do
     resources :participations, only: [:index]
   end
 

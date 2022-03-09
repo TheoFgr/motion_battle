@@ -15,7 +15,7 @@ class ParticipationsController < ApplicationController
       GameChannel.broadcast_to(
         @game,{
           action: "new_participation",
-          content: render_to_string(partial: "participations", locals: { participations: @participations })}
+          content: render_to_string(partial: "participations", locals: { participations: @participations, hide_button: true })}
       )
       @game.start_if_needed
     else
@@ -27,5 +27,17 @@ class ParticipationsController < ApplicationController
     @participation = Participation.where(user_id: params['user_id'], game_id: params['game_id']).first
     # TODO METTRE UNE VALEUR PAR DEFAUT ET INCREMENTER
     @participation.update(score: @participation.score += 100, kill_count: @participation.kill_count += 1)
+
+    if @participation.score == 400
+      @game = Game.find(params['game_id'])
+      @game.update(ended_at: DateTime.now, status: :end)
+      @participations = @game.participations.order(score: :desc)
+      GameChannel.broadcast_to(
+        @game,{
+          action: "game_end",
+          content: render_to_string(partial: "games/results", locals: { participations: @participations })
+        }
+      )
+    end
   end
 end

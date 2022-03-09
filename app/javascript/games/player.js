@@ -80,14 +80,6 @@ export default class Player {
 
       // patch la participation
       this.#patchParticipation();
-
-
-      if (this.score == 400) {
-        Rails.ajax({
-          type: "PATCH",
-          url: window.location.href
-        })
-      }
     });
   }
 
