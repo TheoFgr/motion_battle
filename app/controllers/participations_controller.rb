@@ -28,7 +28,7 @@ class ParticipationsController < ApplicationController
     # TODO METTRE UNE VALEUR PAR DEFAUT ET INCREMENTER
     @participation.update(score: @participation.score += 100, kill_count: @participation.kill_count += 1)
 
-    if @participation.score == 400
+    if @participation.score == 500
       @game = Game.find(params['game_id'])
       @game.update(ended_at: DateTime.now, status: :end)
       @participations = @game.participations.order(score: :desc)
