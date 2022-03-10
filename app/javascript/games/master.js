@@ -1,26 +1,24 @@
 import { MovingDirection } from "./moving_direction";
-import boss1 from "../images/boss1.png";
-import boss2 from "../images/boss2.png";
-import boss3 from "../images/boss3.png";
-import boss4 from "../images/boss4.png";
-import boss5 from "../images/bossN5.png";
+// import master1 from "../images/master1.png";
+// import master2 from "../images/master2.png";
+// import master3 from "../images/master3.png";
+// import master4 from "../images/master4.png";
+// import master5 from "../images/masterN5.png";
 import tour1 from "../images/tour1.jpg"
 
-VELOCITY = 2;
-
-export default class Boss {
+export default class Master {
   constructor(x, y, tileSize, velocity, tileMap){
     this.x = x;
     this.y = y;
     this.tileSize = tileSize;
-    this.velocity = VELOCITY;
+    this.velocity = velocity;
     this.tileMap = tileMap;
 
     this.#loadImages();
 
     this.movingDirection = Math.floor(Math.random() * Object.keys(MovingDirection).length);
 
-    this.directionTimerDefault = this.#random(10, 20);
+    this.directionTimerDefault = this.#random(1, 10);
     this.directionTimer = this.directionTimerDefault;
 
   }
@@ -98,26 +96,26 @@ export default class Boss {
 
   #loadImages(){
 
-    this.bossN1 = new Image();
-    this.bossN1.src = bossN1;
+    // this.masterN1 = new Image();
+    // this.masterN1.src = masterN1;
 
-    this.bossN2 = new Image();
-    this.bossN2.src = bossN2;
+    // this.masterN2 = new Image();
+    // this.masterN2.src = masterN2;
 
-    this.bossN3 = new Image();
-    this.bossN3.src = bossN3;
+    // this.masterN3 = new Image();
+    // this.masterN3.src = masterN3;
 
-    this.bossN4 = new Image();
-    this.bossN4.src = bossN4;
+    // this.masterN4 = new Image();
+    // this.masterN4.src = masterN4;
 
-    this.bossN5 = new Image()
-    this.bossN5.src = bossN5
+    // this.masterN5 = new Image()
+    // this.masterN5.src = masterN5
 
-    this.tour1 = new Image()
-    this.tour1 = tour1
+    this.tour1 = new Image();
+    this.tour1.src = tour1;
 
     this.images =
-    this.bossN4;
+    this.tour1;
 
   }
 

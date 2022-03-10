@@ -1,8 +1,6 @@
 <div data-game-subscriptions-target="subscriptions">
-  <% if hide_button != true %>
     <p>Click on <em>"waiting line"</em> and wait for your friends to start the game</p>
     <%= button_to "waiting line", participations_path, method: :post, remote: true, class:"btn-queue", data: {action: 'click->game-subscriptions#start'} %>
-  <% end %>
   <% participations.each do |participation| %>
     <ul class='waiting-participations'>
       <li>
