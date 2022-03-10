@@ -18,7 +18,7 @@ export default class Game {
     this.Player.draw(this.ctx, this.enemies, this.masters);
     this.enemies.forEach(enemy => enemy.draw(this.ctx));
     this.masters.forEach(master => master.draw(this.ctx));
-    this.ctx.font = '24px Helvetica';
+    this.ctx.font = '16px white Helvetica';
     this.ctx.fillText("Score: " + this.Player.score, 20, 40);
   }
 
