@@ -14,6 +14,9 @@ connect(){
 }
 
   start() {
+    const audioEiffel = new Audio("https://res.cloudinary.com/dgzu2kehe/video/upload/v1646906158/eiffel_baj6zq.mp3")
+    audioEiffel.play()
+    audioEiffel.volume = 0.5
     // this.channel = consumer.subscriptions.create(
     //   { channel: "GameChannel", id: this.gameIdValue },
     //   {received: data => this.routeAction(data)}
