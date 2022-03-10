@@ -2,7 +2,7 @@ class Game < ApplicationRecord
   has_many :participations, dependent: :destroy
   enum status: [:waiting, :start, :end]
 
-  MAX_PLAYERS_COUNT = 2
+  MAX_PLAYERS_COUNT = 3
 
   def winner
     participations.find do |participation|
