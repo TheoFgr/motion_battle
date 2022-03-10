@@ -1,32 +1,55 @@
 import { MovingDirection } from "./moving_direction";
-// import master1 from "../images/master1.png";
-// import master2 from "../images/master2.png";
-// import master3 from "../images/master3.png";
-// import master4 from "../images/master4.png";
-// import master5 from "../images/masterN5.png";
-import tour1 from "../images/tour1.jpg"
+// img boss right
+import master1 from "../images/mas1.png";
+import master2 from "../images/mas2.png";
+import master3 from "../images/mas3.png";
+import master4 from "../images/mas4.png";
+import master5 from "../images/mas5.png";
+import master6 from "../images/mas6.png";
+import master7 from "../images/mas7.png";
+import master8 from "../images/mas8.png";
+import master9 from "../images/mas9.png";
+import master10 from "../images/mas10.png";
+//im boss left
+import master1v from "../images/mas1v.png";
+import master2v from "../images/mas2v.png";
+import master3v from "../images/mas3v.png";
+import master4v from "../images/mas4v.png";
+import master5v from "../images/mas5v.png";
+import master6v from "../images/mas6v.png";
+import master7v from "../images/mas7v.png";
+import master8v from "../images/mas8v.png";
+import master9v from "../images/mas9v.png";
+import master10v from "../images/mas10v.png";
+import { left } from "@popperjs/core";
+// import tour1 from "../images/tour1.jpg"
 
 export default class Master {
   constructor(x, y, tileSize, velocity, tileMap){
     this.x = x;
     this.y = y;
     this.tileSize = tileSize;
-    this.velocity = velocity;
+    this.velocity = velocity ;
     this.tileMap = tileMap;
-
-    this.#loadImages();
+    this.masterImageIndex = 0;
 
     this.movingDirection = Math.floor(Math.random() * Object.keys(MovingDirection).length);
 
     this.directionTimerDefault = this.#random(1, 10);
     this.directionTimer = this.directionTimerDefault;
 
+    this.masterAnimationTimerDefault = 10;
+    this.masterAnimationTimer = null;
+
+    this.#loadImages();
   }
 
   draw(ctx) {
     this.#move();
+    this.#loadImages();
+    this.#animate();
     this.#changeDirection();
-    ctx.drawImage(this.images, this.x, this.y, this.tileSize, this.tileSize);
+    ctx.drawImage(this.images[this.masterImageIndex], this.x, this.y, this.tileSize, this.tileSize);
   }
 
   collideWith(player){
@@ -45,6 +68,7 @@ export default class Master {
 
   #move() {
     if(!this.tileMap.didCollideWithEnvironment(this.x, this.y, this.movingDirection)){
+
       switch (this.movingDirection) {
         case MovingDirection.up:
           this.y -= this.velocity
@@ -62,7 +86,13 @@ export default class Master {
           this.x += this.velocity
           break;
       }
-    }
+    }if(
+              this.movingDirection != null &&
+              this.masterAnimationTimer == null
+              ){
+                this.masterImageIndex = 1;
+                this.masterAnimationTimer = this.masterAnimationTimerDefault;
+              }
   }
 
   #changeDirection(){
@@ -95,28 +125,99 @@ export default class Master {
   }
 
   #loadImages(){
+    if(this.movingDirection === 3){
 
-    // this.masterN1 = new Image();
-    // this.masterN1.src = masterN1;
+      this.master1 = new Image();
+      this.master1.src = master1;
 
-    // this.masterN2 = new Image();
-    // this.masterN2.src = masterN2;
+      this.master2 = new Image();
+      this.master2.src = master2;
 
-    // this.masterN3 = new Image();
-    // this.masterN3.src = masterN3;
+      this.master3 = new Image();
+      this.master3.src = master3;
 
-    // this.masterN4 = new Image();
-    // this.masterN4.src = masterN4;
+      this.master4 = new Image();
+      this.master4.src = master4;
 
-    // this.masterN5 = new Image()
-    // this.masterN5.src = masterN5
+      this.master5 = new Image()
+      this.master5.src = master5
 
-    this.tour1 = new Image();
-    this.tour1.src = tour1;
+      this.master6 = new Image()
+      this.master6.src = master6
 
-    this.images =
-    this.tour1;
+      this.master7 = new Image()
+      this.master7.src = master7
 
+      this.master8 = new Image()
+      this.master8.src = master8
+
+      this.master9 = new Image()
+      this.master9.src = master9
+
+      this.master10 = new Image()
+      this.master10.src = master10
+
+    }else if(this.movingDirection === 2){
+      this.master1 = new Image();
+      this.master1.src = master1v;
+
+      this.master2 = new Image();
+      this.master2.src = master2v;
+
+      this.master3 = new Image();
+      this.master3.src = master3v;
+
+      this.master4 = new Image();
+      this.master4.src = master4v;
+
+      this.master5 = new Image()
+      this.master5.src = master5v;
+
+      this.master6 = new Image()
+      this.master6.src = master6v;
+
+      this.master7 = new Image()
+      this.master7.src = master7v;
+
+      this.master8 = new Image()
+      this.master8.src = master8v;
+
+      this.master9 = new Image()
+      this.master9.src = master9v;
+
+      this.master10 = new Image()
+      this.master10.src = master10v;
+    }
+
+    // this.tour1 = new Image();
+    // this.tour1.src = tour1;
+
+    this.images = [
+      this.master1,
+      this.master2,
+      this.master3,
+      this.master4,
+      this.master5,
+      this.master6,
+      this.master7,
+      this.master8,
+      this.master9,
+      this.master10
+    ]
+
+  }
+
+  #animate() {
+    if(this.masterAnimationTimer == null){
+      return;
+    }
+    this.masterAnimationTimer--;
+    if(this.masterAnimationTimer ==0){
+      this.masterAnimationTimer = this.masterAnimationTimerDefault;
+      this.masterImageIndex++;
+      if(this.masterImageIndex == this.images.length)
+        this.masterImageIndex = 0;
+    }
   }
 
 }

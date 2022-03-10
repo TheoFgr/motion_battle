@@ -73,7 +73,7 @@ export default class Player {
     collideMasters.forEach((master) =>{
       masters.splice(masters.indexOf(master),1);
       this.wakaSound.play();
-      this.score += 1000;
+      this.score += 100;
       this.kill += 1;
 
 

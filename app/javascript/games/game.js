@@ -9,7 +9,7 @@ export default class Game {
     this.tileMap = new TileMap(this.tileSize);
     this.Player = this.tileMap.getPlayer(this.velocity);
     this.enemies = this.tileMap.getEnemies(this.velocity);
-    this.masters = this.tileMap.getMaster(this.velocity);
+    this.masters = [];
     this.tileMap.setCanvasSize(this.canvas);
   }
 
@@ -17,7 +17,12 @@ export default class Game {
     this.tileMap.draw(this.ctx);
     this.Player.draw(this.ctx, this.enemies, this.masters);
     this.enemies.forEach(enemy => enemy.draw(this.ctx));
-    this.masters.forEach(master => master.draw(this.ctx));
+    if(this.Player.score === 400){
+      if (this.masters.length < 1) {
+        this.masters = this.tileMap.getMaster(this.velocity);
+      }
+      this.masters.forEach(master => master.draw(this.ctx));
+    }
     this.ctx.font = '24px Helvetica';
     this.ctx.fillText("Score: " + this.Player.score, 20, 40);
   }
