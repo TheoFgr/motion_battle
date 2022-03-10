@@ -22,7 +22,6 @@ import master8v from "../images/mas8v.png";
 import master9v from "../images/mas9v.png";
 import master10v from "../images/mas10v.png";
 import { left } from "@popperjs/core";
-// import tour1 from "../images/tour1.jpg"
 
 export default class Master {
   constructor(x, y, tileSize, velocity, tileMap){
@@ -35,7 +34,7 @@ export default class Master {
 
     this.movingDirection = Math.floor(Math.random() * Object.keys(MovingDirection).length);
 
-    this.directionTimerDefault = this.#random(1, 10);
+    this.directionTimerDefault = this.#random(5, 20);
     this.directionTimer = this.directionTimerDefault;
 
     this.masterAnimationTimerDefault = 10;
@@ -87,12 +86,12 @@ export default class Master {
           break;
       }
     }if(
-              this.movingDirection != null &&
-              this.masterAnimationTimer == null
-              ){
-                this.masterImageIndex = 1;
-                this.masterAnimationTimer = this.masterAnimationTimerDefault;
-              }
+        this.movingDirection != null &&
+        this.masterAnimationTimer == null
+        ){
+          this.masterImageIndex = 1;
+          this.masterAnimationTimer = this.masterAnimationTimerDefault;
+        }
   }
 
   #changeDirection(){
@@ -188,9 +187,6 @@ export default class Master {
       this.master10 = new Image()
       this.master10.src = master10v;
     }
-
-    // this.tour1 = new Image();
-    // this.tour1.src = tour1;
 
     this.images = [
       this.master1,
