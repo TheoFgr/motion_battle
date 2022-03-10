@@ -23,8 +23,9 @@ export default class Game {
       }
       this.masters.forEach(master => master.draw(this.ctx));
     }
-    this.ctx.font = '24px Helvetica';
-    this.ctx.fillText("Score: " + this.Player.score, 20, 40);
+    this.ctx.font = 'italic 24px Helvetica';
+    this.ctx.fillStyle = "rgb(193,186,202)";
+    this.ctx.fillText("Score: " + this.Player.score, 30, 25);
   }
 
   start() {

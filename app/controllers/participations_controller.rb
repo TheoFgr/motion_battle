@@ -15,7 +15,7 @@ class ParticipationsController < ApplicationController
       GameChannel.broadcast_to(
         @game,{
           action: "new_participation",
-          content: render_to_string(partial: "participations", locals: { participations: @participations, hide_button: true })}
+          content: render_to_string(partial: "participations", locals: { participations: @participations })}
       )
       @game.start_if_needed
     else

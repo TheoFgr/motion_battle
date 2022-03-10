@@ -52,7 +52,7 @@ body {
   font-size: 32px;
   display: flex;
   justify-content: space-evenly;
-  margin-top: 12%;
+  margin-top: 1%;
 
   a {
   color: rgb(193,186,202);
@@ -82,12 +82,11 @@ body {
   justify-content: space-evenly;
   font-size: 2.0rem;
   text-align: center;
-  margin-top: 1%;
+  font-style: italic;
   font-family: 'Hubballi';
-  background-color: rgba(193,186,202, .2);
+  background-color: rgba(193,186,202, .1);
   color: white;
   width: 25%;
   margin: auto;
   padding: 0px;
-  border-radius: 7px;
 }
