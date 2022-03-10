@@ -71,8 +71,8 @@ export default class Player {
   #eatMaster(masters){
     const collideMasters = masters.filter((master)=>master.collideWith(this));
     collideMasters.forEach((master) =>{
-      masters.splice(masters.indexOf(master),1);
       this.wakaSound.play();
+      masters.splice(masters.indexOf(master),1);
       this.score += 100;
       this.kill += 1;
 
@@ -85,8 +85,8 @@ export default class Player {
   #eatEnemy(enemies){
     const collideEnemies = enemies.filter((enemy)=>enemy.collideWith(this));
     collideEnemies.forEach((enemy) =>{
-      enemies.splice(enemies.indexOf(enemy),1);
       this.wakaSound.play();
+      enemies.splice(enemies.indexOf(enemy),1);
       this.score += 100;
       this.kill += 1;
 
