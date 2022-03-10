@@ -1,4 +1,13 @@
-<h1>World Best Player</h1>
-<% @winners.each do |data| %>
-  <h1><%= data[:winner].user.pseudo %> <%= data[:time] %>s</h1>
-<% end %>
+<div class="ranking-csgo">
+
+  <h1>World Fast Player</h1>
+
+  <div>
+  <p> pseudo </p>
+  <p> Fastest game</p>
+  <% @winners.each do |data| %>
+    <p><%= data[:winner].user.pseudo %> <%= data[:time] %>s</p>
+  <% end %>
+  <%= link_to "Home", root_path, class: "laduchbtn"%>
+  </div>
+</div>
