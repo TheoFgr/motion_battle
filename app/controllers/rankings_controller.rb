@@ -1,6 +1,6 @@
 class RankingsController < ApplicationController
   def index
-    @winners = Game.winners_with_times.last(6)
+    @winners = Game.winners_with_times.first(10)
     # @datas = []
     # User.all.each do |user|
     #   data = { user: user }
