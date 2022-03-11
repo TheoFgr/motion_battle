@@ -14,7 +14,6 @@ class RankingsController < ApplicationController
     #   data[:time] = times.min unless times.min == nil
     #   @datas << data
     # end
-
   end
 
   def rules

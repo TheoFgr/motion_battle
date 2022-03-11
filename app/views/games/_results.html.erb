@@ -4,22 +4,25 @@
   <div class="after"></div>
 </div>
 <div class="all-data">
-  <div class="container-data1">
-    <p class="stats">Rank</p>
-    <p class="stats">Name</p>
-    <p class="stats">Game Time</p>
-    <p class="stats">Score</p>
+  <div class="container-data2">
+    <p class="stats" >Game Time : <%= participations.last.elapsed_time %></p>
   </div>
-  <ul class="p-0">
+    <div class="container-data1">
+      <p class="stats">Rank</p>
+      <p class="stats">Name</p>
+      <p class="stats">Kill</p>
+      <p class="stats">Score</p>
+    </div>
+    <ul class="p-0">
     <% participations.each_with_index do |participation, index| %>
-    <li style= "list-style: none;">
-      <div class="container-data">
-        <p class="stats"><%= index + 1 %></p>
-        <p class="stats"><%= participation.user.pseudo %></p>
-        <p class="stats"><%= participation.elapsed_time %>s</p>
-        <p class="stats"> <%= participation.score %></p>
-      </div>
-    </li>
+      <li style= "list-style: none;">
+        <div class="container-data">
+          <p class="stats"><%= index + 1 %></p>
+          <p class="stats"><%= participation.user.pseudo %></p>
+          <p class="stats"><%= participation.kill_count %></p>
+          <p class="stats"> <%= participation.score %></p>
+        </div>
+      </li>
     <% end %>
   </ul>
 </div>
