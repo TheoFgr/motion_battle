@@ -7,16 +7,16 @@
 <div class="pseudo-user"><%= current_user.pseudo %></div>
 <div class= "w-100">
 <div class="container-data-users-show mx-auto">
-  <p class="stats">Games Played: <em>56</em></p>
+  <p class="stats">Games Played: <em><%= current_user.participations.count %></em></p>
 </div>
 <div class="container-data-users-show mx-auto">
-  <p class="stats">Win: <em>12</em> </p>
+  <p class="stats">Win: <em><%= current_user.participations.where(score: 500).count %></em> </p>
 </div>
 <div class="container-data-users-show mx-auto">
-  <p class="stats">Kill: <em>187</em> </p>
+  <p class="stats">Kill: <em><%= current_user.participations.sum(:kill_count) %></em> </p>
 </div>
 <div class="container-data-users-show mx-auto">
-  <p class="stats">Total Score: <em>3900</em></p>
+  <p class="stats">Total Score: <em><%= current_user.participations.sum(:score) %></em></p>
 </div>
 </div>
 <div class="quit-home">
