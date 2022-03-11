@@ -1,13 +1,15 @@
 <div class="ranking-csgo">
-
   <h1>World Fast Player</h1>
 
-  <div>
-  <p> pseudo </p>
-  <p> Fastest game</p>
-  <% @winners.each do |data| %>
-    <p><%= data[:winner].user.pseudo %> <%= data[:time] %>s</p>
-  <% end %>
-  <%= link_to "Home", root_path, class: "laduchbtn"%>
+  <div class="ranking-stats">
+
+      <% @winners.each do |data| %>
+        <div class="coucou">
+          <p><%= data[:winner].user.pseudo %></p>
+          <p><em><%= data[:time] %>s</em></p>
+        </div>
+      <% end %>
+
   </div>
+    <%= link_to "Home", root_path, class: "laduchbtn", id:"laduch3"%>
 </div>
