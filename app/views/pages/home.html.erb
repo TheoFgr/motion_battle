@@ -1,21 +1,16 @@
-  <div class ="title">
-    <h1>Motion Battle </h1>
-  </div>
-
-
+<div class ="title">
+  <h1>Motion Battle </h1>
+</div>
 <div data-controller="audio" class = "btns-home">
     <div class="new-game" >
       <%= button_to "New Game", games_path, method: :post, class: "laduchbtn" %>
     </div>
-
     <div class="rules-option">
       <%= link_to "Rules", rules_rankings_path, class: "laduchbtn"%>
       <%= link_to "Options", root_path, class: "laduchbtn"%>
     </div>
-
     <div class = "quit">
       <%= link_to "Synopsis", synopsis_rankings_path, class: "laduchbtn"%>
-
     </div>
   </div>
 </div>

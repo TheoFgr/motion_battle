@@ -43,6 +43,7 @@
     font-family: 'MedievalSharp', 'cursive';
     color: rgb(193,186,202);
     font-size: 3rem;
+    margin-bottom: 2%;
   }
 
   p {
@@ -51,5 +52,30 @@
     margin-top: 3%;
     font-size: 26px;
     list-style: none;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
   }
+}
+
+
+.ranking-stats {
+  margin: auto;
+}
+
+.coucou {
+  margin: auto;
+  width: 40%;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  margin-top: 1%;
+  background-color: rgba(124,39,130, .4);
+  border-radius: 7px;
+  margin-bottom: 2%;
+}
+
+#laduch3 {
+  font-size: 24px;
 }
